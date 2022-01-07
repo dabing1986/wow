@@ -1,0 +1,7 @@
+## Interface: 11302
+## Title: |cffff6060[旧城]|r SunderArmorCount
+## Notes: 有效破甲数量统计 by 苗壮壮
+## Author: 苗壮壮
+## Version: 1.1
+## SavedVariables: 
+SunderArmorCount.lua

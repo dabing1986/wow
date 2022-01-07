@@ -1,0 +1,5 @@
+## Interface: 11302
+## Title: No Real Friends
+## Author: Gourgas, Guild Master of Jazztobak - Gehennas
+## Notes: This will hide your Battle.Net friends in-game. You can still chat with them though.
+NoRealFriends.lua

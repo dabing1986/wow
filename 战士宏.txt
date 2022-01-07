@@ -1,0 +1,465 @@
+zs-泄怒1
+
+3
+
+#showtooltip 顺劈斩
+/cleartarget[dead][help]
+/startattack
+/cast 顺劈斩
+/cast 旋风斩
+
+
+zs-泄怒2
+
+1
+
+#showtooltip 英勇打击
+/cleartarget[dead][help]
+/startattack
+/cast 英勇打击
+/cast 嗜血
+
+zs-冲锋
+
+上滚轮
+
+#showtooltip [mod:shift]死亡之愿 ;冲锋
+/cleartarget[dead][help]
+/cast [stance:2/3]战斗姿态
+/cast 冲锋
+/use [mod:shift] 死亡之愿
+/equipslot [equipped:盾牌] 16 巨龙之击
+/equipslot [equipped:盾牌] 17 国王护卫者
+/startattack
+
+
+#showtooltip 冲锋
+/cleartarget[dead][help]
+/cast [stance:2/3]战斗姿态
+/cast 冲锋
+/equipslot [equipped:盾牌] 16 巨龙之击
+/equipslot [equipped:盾牌] 17 国王护卫者
+/startattack
+
+
+
+
+zs-狂暴
+
+下滚轮
+
+#showtooltip [mod:shift] 鲁莽;拦截
+/cast 狂暴姿态
+/cast 拦截
+/cast [mod:shift] 鲁莽
+/equipslot [equipped:盾牌] 16 巨龙之击
+/equipslot [equipped:盾牌] 17 国王护卫者
+/startattack
+
+#showtooltip 拦截
+/cast [stance:1/2]狂暴姿态
+/cast 拦截
+/equipslot [equipped:盾牌] 16 巨龙之击
+/equipslot [equipped:盾牌] 17 国王护卫者
+/startattack
+
+
+
+zs-盾墙
+
+#showtooltip 盾墙
+/startattack
+/equip 巨龙之击
+/equip 沙塔尔纹章盾
+/cast 防御姿态
+/cast 盾墙
+
+
+#showtooltip [equipped:盾牌]沙塔尔纹章盾;巨龙之击
+/cast [noequipped:盾牌] 防御姿态
+/equipslot [noequipped:盾牌] 16 巨龙之击
+/equipslot [noequipped:盾牌] 17 沙塔尔纹章盾
+/cast 盾牌格挡
+
+
+#showtooltip 
+/cast [stance:1/3] 防御姿态
+/施放 [stance:2] 血性狂暴
+/cast [stance:2][@focus,help,nodead][help]援护
+
+
+
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]元素诅咒
+
+
+
+
+#showtooltip 
+/cast [stance:1/3] 防御姿态
+/施放 [stance:2] 血性狂暴
+/cast [stance:2][@focus,noharm,nodead][help]援护
+
+
+
+
+
+zs-取消英勇
+
+鼠标侧键 
+
+#showtooltip 英勇打击
+/cleartarget[dead][help]
+/startattack
+/cast 英勇打击
+/stopcasting
+
+zs-取顺
+
+鼠标侧键
+
+#showtooltip 顺劈斩
+/cleartarget[dead][help]
+/targetenemy
+/startattck
+/cast 顺劈斩
+
+#showtooltip 顺劈斩
+/cleartarget[dead][help]
+/startattack
+/cast 顺劈斩
+/stopcasting
+
+
+zs-嗜血
+
+2
+
+#showtooltip 嗜血
+/cleartarget[dead][help]
+/startattack
+/cast 嗜血
+
+zs-斩杀
+
+R
+
+#showtooltip
+/cancelaura
+/cleartarget[dead][help]
+/cast [mod:alt] 挑战怒吼;[stance:1/3] 斩杀;[stance:2] 嘲讽
+/startattack
+/cast [nomod:alt,equipped:弓] 弓射击;[nomod:alt,equipped:弩] 弩射击;[nomod:alt,equipped:枪械] 枪械射击;[nomod:alt,equipped:投掷武器] 投掷
+
+
+#showtooltip
+/cancelaura
+/cleartarget[dead][help]
+/cast [mod:alt] 挑战怒吼;[stance:1/3] 斩杀;[stance:2] 嘲讽
+/startattack
+/cast !射击
+
+
+
+
+zs-旋风斩
+
+q
+
+#showtooltip
+/cleartarget[dead][help]
+/startattack
+/cast [stance:1]压制;/cast [stance:2]复仇;/cast [stance:3]旋风斩
+
+version 2
+
+#show [mod:shift]超级神风炸药[mod:alt]超级神风炸药;[stance:1,nomod]压制;[stance:2,nomod]复仇;[stance:3,nomod]旋风斩
+/cleartarget[dead][help]
+/startattack
+/施放 [mod:alt]横扫攻击
+/cast [stance:1]压制;/cast [stance:2]复仇;/cast [stance:3]旋风斩
+
+
+zs-大招
+5
+
+#showtooltip
+/cast [stance:1]反击风暴;/cast [stance:2]盾墙;/cast [stance:3]鲁莽
+
+
+zs-怒
+
+#showtooltip 狂暴之怒
+/cast 狂暴姿态
+/cast [stance:3]狂暴之怒
+/startattack [combat]
+
+zs-惩戒
+
+4 盾牌格挡 猛击
+
+#showtooltip 惩戒痛击
+/cleartarget[dead][help]
+/cast [nostance:1] 战斗姿态
+/cast [stance:1] 惩戒痛击
+
+
+zs-拳击
+
+T
+#showtooltip [equipped:盾牌] 盾击;[noequipped:盾牌] 拳击
+/cast [equipped:盾牌,stance:3] 防御姿态
+/cast [equipped:盾牌] 盾击
+/cast [noequipped:盾牌] 狂暴姿态
+/cast [noequipped:盾牌] 拳击
+/startattack
+
+
+
+zs-破甲
+
+e
+
+#showtooltip 破甲攻击
+/cleartarget[dead][help]
+/startattack
+/cast 破甲攻击
+
+
+z
+
+#showtooltip 雷霆一击
+/cast [stance:2/3] 战斗姿态
+/cast 雷霆一击
+
+
+#showtooltip 雷霆一击
+/startattack
+/cast 雷霆一击
+
+
+
+#showtooltip
+/cast [mod:alt,button:2] 烹饪;[mod:alt] 急救;[button:2] 锻造;工程学
+
+
+
+x
+
+战斗怒吼
+
+#showtooltip [mod:ctrl]命令怒吼; 战斗怒吼
+/cast [mod:ctrl]命令怒吼
+/cast 战斗怒吼
+
+#showtooltip [mod:ctrl]破胆怒吼; 挫志怒吼
+/cast [mod:ctrl]破胆怒吼
+/cast 挫志怒吼
+
+
+
+#showtooltip [combat]国王护卫者;迅捷紫色狮鹫
+/targetenemy [help][dead][noexists]
+/startattack
+/stopmacro [flying]
+/cast [flyable] 迅捷紫色狮鹫; [夜刃豹缰绳]
+/dismount [mounted]
+
+
+#showtooltip [stance:1/3]乘胜追击;[stance:2]缴械
+/cast [stance:1/3][@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat,harm,nodead]乘胜追击
+/cast [stance:2]缴械
+/stopmacro [flying]
+/cast [flyable] 涡轮加速飞行器控制台; 雷矛军用坐骑
+/dismount [mounted]
+
+
+
+
+#showtooltip
+/cleartarget[dead][help]
+/startattack
+/cast [stance:1]惩戒痛击;/cast [stance:2]缴械
+/cast [stance:3]防御姿态
+/cast [stance:2]缴械
+
+
+#showtooltip 雷霆一击
+/cast [stance:2/3] 战斗姿态
+/cast 雷霆一击
+
+
+#show [stance:1,nomod]压制;[stance:2,nomod]复仇;[stance:3,nomod]旋风斩
+/cleartarget[dead][help]
+/startattack
+/cast [stance:1]压制;/cast [stance:2]复仇;/cast [stance:3]旋风斩
+
+
+#showtooltip
+/cancelaura
+/cleartarget[dead][help]
+/cast [mod:alt] 挑战怒吼;[stance:1/3] 斩杀;[stance:2] 嘲讽
+/startattack
+/cast [nomod:alt,equipped:弓] 弓射击;[nomod:alt,equipped:弩] 弩射击;[nomod:alt,equipped:枪械] 枪械射击;[nomod:alt,equipped:投掷武器] 投掷
+
+
+#showtooltip
+/cast [equipped:钢鹰强弩]嗜血
+/run local a=0.7;DMHWarrior(a)
+/stopmacro [equipped:钢鹰强弩]
+/cast 英勇打击
+/equipslot 18 钢鹰强弩
+
+/run EquipItemByName("锯齿箭")
+
+
+#showtooltip
+/cast 嗜血
+/run local a=0.7;DMHWarrior(a)
+/stopmacro [equipped:钢鹰强弩]
+/cast 英勇打击
+
+/equipslot [notequipped:钢鹰强弩] 18 钢鹰强弩
+
+
+
+#showtooltip 战斗怒吼
+/equipslot 14 索兰莉安的蓝宝石
+/equip 愤怒护腕
+/equip 愤怒腰带
+/equip 愤怒马靴
+/cast 战斗怒吼
+/in 0.3 /equipslot 14 龙脊奖章
+/in 0.3 /equip 刀塔作战护腕
+/in 0.3 /equip 百亡腰带
+/in 0.3 /equip 湮灭战靴
+
+
+#showtooltip 战斗怒吼
+/equip 愤怒护腕
+/equip 愤怒腰带
+/equip 愤怒马靴
+/cast 战斗怒吼
+/in 0.3 /equip 刀塔作战护腕
+/in 0.3 /equip 红色战斗腰带
+/in 0.3 /equip 湮灭战靴
+
+肖恩丶狂暴者
+
+
+无情突袭合剂
+加速药水
+屠魔药剂
+强效怒气药水
+力量卷轴 V
+敏捷卷轴 V
+保护卷轴 V
+烧烤裂蹄牛
+猫鼬药剂
+治疗药水注射器
+精金平衡石
+元素磨刀石
+强效结界符文
+梦魇草
+烈焰菇
+献祭之油
+
+
+
+{肖恩丶狂暴者;01团本-kbz;
+[无情突袭合剂],5,0;[加速药水],20,0;[屠魔药剂],5,0;[强效怒气药水],20,0;[力量卷轴 V],10,0;[敏捷卷轴 V],10,0;[保护卷轴 V],10,0;[烧烤裂蹄牛],20,0;[猫鼬药剂],10,0;[超级神风炸药],20,0;[地精工兵炸药],20,0;[治疗药水注射器],10,0;[精金平衡石],10,0;[元素磨刀石],10,0;[强效结界符文],5,0;[梦魇草],10,0;[烈焰菇],5,0;[献祭之油],20,0;
+}
+
+aura_env.button = CreateFrame("Button", "buffButton", aura_env.region, "SecureActionButtonTemplate")
+aura_env.button:SetAllPoints()
+aura_env.button:SetAttribute("unit", "player")
+aura_env.button:SetAttribute("type","macro")
+aura_env.button:SetAttribute("macrotext", "/use 力量卷轴 V" )   
+
+aura_env.button = CreateFrame("Button", "buffButton", aura_env.region, "SecureActionButtonTemplate")
+aura_env.button:SetAllPoints()
+aura_env.button:SetAttribute("unit", "player")
+aura_env.button:SetAttribute("type","macro")
+aura_env.button:SetAttribute("macrotext", "/use 力量卷轴 V" )   
+
+‘
+
+
+
+/script SelectGossipAvailableQuest(2)
+/script CompleteQuest()
+/script GetQuestReward()
+
+
+
+#showtooltip 法术反射
+/stopcasting
+/equipslot [noequipped:盾牌]17 沙塔尔纹章盾
+/施放 [stance:1/2] 法术反射;防御姿态
+/施放 [stance:1/2,equipped:盾牌] 血性狂暴
+/startattack
+
+
+
+#showtooltip 缴械
+/cast [stance:1/3] 防御姿态
+/cast 缴械
+/startattack
+
+
+
+function()
+    
+    --Rage buffer T7
+    local spellRageBufferT7
+    local spellCDT7
+    if aura_env.spellCostT7 then
+        local triggerStateT7 = WeakAuras.GetTriggerStateForTrigger(aura_env.id, aura_env.triggerIdT7)
+        local expirationTimeT7 = triggerStateT7[""].expirationTime
+        if expirationTimeT7 ~= 0 then
+            spellCDT7 = expirationTimeT7 - GetTime()
+        else
+            spellCDT7 = 0
+        end
+        spellRageBufferT7 = min(aura_env.spellCostT7 / 6 * (6 - spellCDT7 + 1.5), aura_env.spellCostT7)
+    else
+        spellRageBufferT7 = 0
+    end
+    
+    --CD Whirlwind
+    local triggerStateWW = WeakAuras.GetTriggerStateForTrigger(aura_env.id, 7)
+    local expirationTimeWW = triggerStateWW[""].expirationTime
+    local spellCDWW
+    if expirationTimeWW ~= 0 then
+        spellCDWW = expirationTimeWW - GetTime()
+    else
+        spellCDWW = 0
+    end
+    
+    return UnitPower("player") >= spellRageBufferT7 + aura_env.spellCostWW and
+    (
+        aura_env.triggerIdT7 == nil
+        or spellCDWW <= spellCDT7 - 1.2
+        or aura_env.triggerIdT7 == 6 and not IsEquippedItemType("Shields")
+    ) or not aura_env.spellCostT7
+    
+end
+
+
+
+
+zs-pvp-冲锋
+
+#showtooltip 冲锋
+/cleartarget[dead][help]
+/cast [stance:2/3]战斗姿态
+/cast 冲锋
+/equipslot [equipped:盾牌] 16 风暴使者
+/startattack
+/cast 断筋
+
+#showtooltip 拦截
+/cast [stance:1/2]狂暴姿态
+/cast 拦截
+/equipslot [equipped:盾牌] 16 风暴使者
+/startattack
+/cast 断筋

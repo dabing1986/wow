@@ -1,0 +1,9 @@
+﻿## Interface: 11302
+## Title: Telo's BuffTimers
+## Notes: Adds mini buff timers under the top right buff icons.
+## Title-zhCN: BuffTimers
+## Notes-zhCN: 精确显示Buff时间
+## Title-zhTW: BuffTimers
+## Notes-zhTW: 精確顯示Buff時間
+## X-Repple: 辅助
+BuffTimers.xml

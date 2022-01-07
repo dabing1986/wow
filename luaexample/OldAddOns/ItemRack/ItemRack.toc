@@ -1,0 +1,14 @@
+## Interface: 11305
+## Title: ItemRack
+## Version: 3.50
+## Author: Gello - Updated for Classic by Rottenbeer - Chinese Localized by Aoikaze
+## SavedVariables: ItemRackSettings, ItemRackItems, ItemRackEvents
+## SavedVariablesPerCharacter: ItemRackUser
+## X-Curse-Project-ID: 340903
+ItemRack.lua
+ItemRack.xml
+ItemRackButtons.lua
+ItemRackButtons.xml
+ItemRackEquip.lua
+ItemRackQueue.lua
+ItemRackEvents.lua

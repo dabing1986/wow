@@ -1,0 +1,18 @@
+## Interface: 11304
+## Title: Buff'o'mat
+## Notes: Semi-automatic buff and resurrection bot
+## Version: 1.82
+## Author: GPI / Erytheia-Razorfen
+## DefaultState: enabled
+## SavedVariables: buffOmatDB
+## SavedVariablesPerCharacter: buffOmatDBChar
+
+LibGPIOptions.lua
+LibGPIMinimapButton.lua
+LibGPIToolBox.lua
+
+Localization.lua
+LibGPIToolBox.lua
+scan.lua
+buffOmat.lua
+buffOmat.xml

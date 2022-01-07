@@ -1,0 +1,11 @@
+----------------
+---AutoFollow---
+----------------
+--Novaspark-Arugal OCE (classic) / Venomisto-Frostmourne OCE (retail).
+--https://www.curseforge.com/members/venomisto/projects
+--Spams /follow <name> every 2 seconds.
+
+--Type "/af playername" to start following every 2 seconds.
+--Or just type "/af" with a player targeted.
+--To stop type "/af stop".
+--Pauses follow when drinking/eating.

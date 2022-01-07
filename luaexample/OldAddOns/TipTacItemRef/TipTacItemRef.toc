@@ -1,0 +1,8 @@
+## Interface: 11304
+## Version: 19.03.31
+## Title: TipTacItemRef |cff00aa00(GepyFix)
+## Author: Aezay (Earthen Ring EU)
+## Notes: Improved ItemRefTooltip
+## OptionalDeps: TipTac
+LibItemString.lua
+ttItemRef.lua

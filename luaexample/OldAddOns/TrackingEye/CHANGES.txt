@@ -1,0 +1,16 @@
+lightweight tag 095036c6fb6483b850446d467c5e5297625b11a7 v2.1.0
+Author:	Linden Ryuujin <Linden.Ryuujin@gmail.com>
+Date:	Wed Dec 9 01:12:55 2020 +0000
+
+commit d4d417c6246cf134c3f2536393bacc2274b28b09
+Author: Linden Ryuujin <Linden.Ryuujin@gmail.com>
+Date:   Wed Dec 9 01:12:41 2020 +0000
+
+    Support for changing scale by command.
+
+commit d4d417c6246cf134c3f2536393bacc2274b28b09
+Author: Linden Ryuujin <Linden.Ryuujin@gmail.com>
+Date:   Wed Dec 9 01:12:41 2020 +0000
+
+    Support for changing scale by command.
+

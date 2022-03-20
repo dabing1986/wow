@@ -1,3 +1,9 @@
+3sm
+
+/follow 菠萝神棍
+
+
+
 3假人
 
 #showtooltip 高级活动假人
@@ -8,10 +14,6 @@
 #show
 /cast [mod:alt,button:2] 烹饪;[mod:alt] 急救;[button:2] 锻造;工程学
 
-3放掉线
-
-/use 强效不灭精华
-/use 次级不灭精华
 
 3炸药
 
@@ -25,11 +27,6 @@
 /clearfocus [target=focus,noexists]
 /focus [@focus,exists]boss99;target
 
-3献祭
-
-/use 献祭之油
-/use 烈焰菇
-
 3绷带
 
 /use [target=player] 厚灵纹布绷带
@@ -37,29 +34,49 @@
 3血瓶
 
 #showtootips 极效治疗石
+/use 战斗大师的残暴
 /use item:32905
 /use item:22105
 /use item:22103
 /use item:22104
 /use item:9421
 
-3饰品2
 
+
+3防掉线
+
+/use 强效不灭精华
+/use 次级不灭精华
+
+3饰品
+#showtooltips
+/use 13
+
+3饰品2
 #showtooltips
 /use 14
-/use 13
 
-3饰品3
+3鱼饵
 
-#showtooltips 加速药水
-/use 14
-/use 13
-/use 加速药水
+/cast equipped:鱼竿]夜色虫
+
+
+4boss
+
+#showtootips 冷漠者的护肩
+/itemrack equip boss
 
 4pvp
 
 #showtootips 风暴使者
 /itemrack equip pvp
+
+
+
+4T6
+
+#showtootips 冲锋战盔
+/itemrack equip 4T6
 
 4加速
 
@@ -68,8 +85,9 @@
 
 4狂暴
 
-#showtootips 狂野机械护目镜
+#showtootips 毁灭者战盔
 /itemrack equip 战狂暴
+
 
 4空
 
@@ -78,6 +96,16 @@
 4防御
 #showtootips 沙塔尔纹章盾
 /itemrack equip 防御
+
+
+5主母
+
+#showtooltip 极效治疗石
+/use item:22105
+/use item:22104
+/use item:22103
+/cast 防护暗影结界
+
 
 5传核
 /use 污染之核
@@ -99,6 +127,17 @@
 #showtooltip 瓦解法杖
 /equip 16 瓦解法杖
 /use 16
+
+5督军
+/target 高阶督军纳因图斯 
+/use 纳因图斯之脊
+
+
+5血魔
+/cast 灵魂箭雨
+/cast 灵魂锁链
+/cast 灵魂长枪
+
 
 6reset
 .reset
@@ -129,30 +168,21 @@
 6骷髅
 .morph 7550
 
-pvp-冲锋
-#showtooltips 冲锋
+
+pvp-zs-猛击
+
+#showtooltips 猛击
 /cleartarget[dead][help]
-/cast [stance:2/3]战斗姿态
-/cast 冲锋
-/equipslot [equipped:盾牌] 16 风暴使者
-/startattack
-/cast 断筋
+/targetenemy [help][dead][noexists]
+/cast 猛击
 
-pvp-拦截
-#showtooltip 拦截
-/cast [stance:1/2]狂暴姿态
-/cast 拦截
-/equipslot [equipped:盾牌] 16 风暴使者
-/startattack
-/cast 断筋
 
-pvp-焦点拦截
-#showtooltip 拦截
-/use 狂暴姿态
-/use [target=focus]拦截
-/cleartarget
-/targetlasttarget
+zs-断筋
 
+#showtooltip 断筋
+/cleartarget[dead][help]
+/targetenemy [help][dead][noexists]
+/use 断筋
 
 zs-01-冲锋
 #showtooltip 冲锋
@@ -162,7 +192,7 @@ zs-01-冲锋
 /equipslot [equipped:盾牌] 16 巨龙之击
 /equipslot [equipped:盾牌] 17 守备官的烙印
 /startattack
-/cast 断筋
+
 
 zs-01-狂暴
 #showtooltip 拦截
@@ -176,14 +206,17 @@ zs-01-防御
 #showtooltip 
 /cast [stance:1/3] 防御姿态
 /施放 [stance:2] 血性狂暴
-/cast [stance:2][@focus,help,nodead][help]援护
+/cast [stance:2][target=mouseover,help][@focus,help,nodead][help]援护
+
+
 
 zs-01-防御2
-#showtooltip [equipped:盾牌]沙塔尔纹章盾;巨龙之击
+#showtooltip [equipped:盾牌]埃辛诺斯壁垒;埃辛诺斯战刃
 /cast [noequipped:盾牌] 防御姿态
-/equipslot [noequipped:盾牌] 16 巨龙之击
-/equipslot [noequipped:盾牌] 17 沙塔尔纹章盾
+/equipslot [noequipped:盾牌] 16 埃辛诺斯战刃
+/equipslot [noequipped:盾牌] 17 埃辛诺斯壁垒
 /cast 盾牌格挡
+
 
 zs-取消英勇
 #showtooltip 英勇打击
@@ -201,6 +234,7 @@ zs-取顺
 zs-嗜血
 #showtooltip 嗜血
 /cleartarget[dead][help]
+/targetenemy [help][dead][noexists]
 /startattack
 /cast 嗜血
 
@@ -227,17 +261,16 @@ zs-惩戒
 /cast [stance:1]惩戒痛击
 
 zs-打断 
-#showtooltip [equipped:盾牌] 盾击;[noequipped:盾牌] 拳击
-/cast [equipped:盾牌,stance:3] 防御姿态
-/cast [equipped:盾牌] 盾击
-/cast [noequipped:盾牌] 狂暴姿态
-/cast [noequipped:盾牌] 拳击
-/startattack
+
+#showtooltip [stance:1/2] 盾击; [stance:3]拳击
+/cast [stance:1/2,equipped:盾牌,modifier:shift,target=focus,exists]盾击;[stance:1/2,equipped:盾牌]盾击;[stance:1/2,noequipped:盾牌]狂暴姿态;[stance:3,modifier:shift,target=focus,exists]拳击;拳击
+
 
 zs-搓志
 #showtooltip [mod:shift]破胆怒吼; 挫志怒吼
 /cast [mod:shift]破胆怒吼
 /cast 挫志怒吼
+
 
 zs-斩杀
 #showtooltip
@@ -247,11 +280,29 @@ zs-斩杀
 /startattack
 /cast !射击
 
+
+zs-断筋
+
+#showtooltip 断筋
+/cleartarget[dead][help]
+/targetenemy [help][dead][noexists]
+/use 断筋
+
+
 zs-旋风
 #showtooltip
 /cleartarget[dead][help]
 /startattack
 /cast [stance:1]压制;/cast [stance:2]复仇;/cast [stance:3]旋风斩
+
+zs-横扫
+
+#showtooltip 横扫攻击
+/cleartarget[dead][help]
+/startattack
+/cast 横扫攻击
+
+
 
 zs-泄怒1
 #showtooltip 顺劈斩
@@ -274,20 +325,23 @@ zs-爆发
 zs-盾墙
 #showtooltip 盾墙
 /startattack
-/equip 巨龙之击
-/equip 沙塔尔纹章盾
+/equip 埃辛诺斯战刃
+/equip 埃辛诺斯壁垒
 /cast 防御姿态
 /cast 盾墙
 
 zs-盾牌反射
+
 #showtooltip 法术反射
 /stopcasting
-/cast [stance:1/3] 防御姿态
-/equipslot [noequipped:盾牌] 16 巨龙之击
-/equipslot [noequipped:盾牌]17 沙塔尔纹章盾
+/cast [stance:3] 战斗姿态
+/equipslot [noequipped:盾牌] 16 埃辛诺斯战刃
+/equipslot [noequipped:盾牌]17 埃辛诺斯壁垒
 /施放 [stance:1/2] 血性狂暴
 /施放 [stance:1/2] 法术反射
 /startattack
+
+
 
 zs-破甲
 #showtooltip 破甲攻击
@@ -304,13 +358,20 @@ zs-缴械
 
 zs-超级怒吼
 #showtooltip 战斗怒吼
+/equipslot 14 索兰莉安的蓝宝石
 /equip 愤怒护腕
 /equip 愤怒腰带
 /equip 愤怒马靴
 /cast 战斗怒吼
+/in 0.3 /equipslot 14 龙脊奖章
 /in 0.3 /equip 刀塔作战护腕
 /in 0.3 /equip 红色战斗腰带
 /in 0.3 /equip 湮灭战靴
+
+
+
+https://bbs.nga.cn/read.php?&tid=29632470
+
 
 zs-雷霆
 #showtooltip 雷霆一击
@@ -318,3 +379,213 @@ zs-雷霆
 /cast 雷霆一击
 
 
+拦截贼
+
+/cast [stance:1]冲锋;[stance:2]拦截
+/cast 防御姿态
+/cast [target=targettarget]援护
+/startattack
+
+抓贼
+
+#showtooltips 冲锋
+/targetenemy
+/cast [harm,exists]血性狂暴
+/cast 挫志怒吼
+/cast [harm,exists]战斗姿态
+/cast 冲锋
+/startattack
+
+
+
+
+pvp-zs-冲锋
+
+#showtooltips 冲锋
+/cleartarget[dead][help]
+/cast [stance:2/3]战斗姿态
+/cast 冲锋
+/equipslot [equipped:盾牌] 16 灾变之刃
+/startattack
+/cast 断筋
+
+
+#showtooltips 冲锋
+/cleartarget[dead][help]
+/targetenemy [help][dead][noexists]
+/cast [stance:2/3]战斗姿态
+/cast [stance:1,nocombat]冲锋
+/equipslot [equipped:盾牌] 16 灾变之刃
+/cast [combat]狂暴姿态 
+/startattack
+
+
+pvp-zs-战斗姿态
+
+#showtooltips 战斗姿态
+/cleartarget[dead][help]
+/cast [stance:2/3]战斗姿态
+/cast 压制
+/equipslot [equipped:盾牌] 16 灾变之刃
+/startattack
+
+
+pvp-zs-拦截
+
+
+#showtooltips 拦截
+/cast [stance:1/2]狂暴姿态
+/cast 拦截
+/equipslot [equipped:盾牌] 16 灾变之刃
+/startattack
+/cast 断筋
+
+pvp-焦点拦截
+#showtooltip 拦截
+/use 狂暴姿态
+/use [target=focus]拦截
+/cleartarget
+/targetlasttarget
+
+
+pvp-zs-援护
+
+#showtooltip 援护
+/stopcasting
+/cast [nostance:2]防御姿态
+/施放 [stance:2] 血性狂暴
+/施放 [@mouseover,help,nodead]援护[@focus,help,nodead][@party1,help,nodead]援护;援护
+
+
+pvp-zs-致死打击
+
+#showtooltip 致死打击
+/startattack
+/use 致死打击
+/script SetRaidTarget("target", 8)
+
+
+pvp-zs-猛击
+
+#showtooltips 猛击
+/cleartarget[dead][help]
+/targetenemy [help][dead][noexists]
+/cast 猛击
+
+100
+
+#showtooltip 顺劈斩
+/cleartarget[dead][help]
+/startattack
+/cast 血性狂暴
+/cast 横扫攻击
+/use 14
+/cast 顺劈斩
+/cast 旋风斩
+
+
+90
+
+#showtooltip 英勇打击
+/cleartarget[dead][help]
+/startattack
+/cast 血性狂暴
+/use 14
+/cast 英勇打击
+/castsequence 致死打击,旋风斩
+
+
+pvp-zs-防御
+
+#showtooltip [equipped:盾牌]埃辛诺斯壁垒;埃辛诺斯战刃
+/cast [noequipped:盾牌] 防御姿态
+/equipslot [noequipped:盾牌] 16 埃辛诺斯战刃
+/equipslot [noequipped:盾牌] 17 埃辛诺斯壁垒
+/use 战斗大师的残暴
+/use item:32905
+/use item:22105
+/use item:22103
+/use item:22104
+/use item:9421
+/cast 盾牌格挡
+
+
+
+猛击+拦截
+
+#showtooltips 拦截
+/cast [harm]拦截;防御姿态
+/cast 猛击
+/equipslot [equipped:盾牌] 16 灾变之刃
+/startattack
+/cast 断筋
+
+
+
+抓贼
+
+
+#showtooltips 冲锋
+/targetenemy
+/cast [harm,exists]血性狂暴
+/cast 挫志怒吼
+/cast [harm,exists]战斗姿态
+/cast 冲锋
+/startattack
+
+
+拦截贼
+
+/cast [stance:1]冲锋;[stance:2]拦截
+/cast 防御姿态
+/cast [target=targettarget]援护
+/startattack
+/cast 断筋
+
+
+
+
+
+pvp-zs-战斗姿态
+
+#showtooltips 战斗姿态
+/cleartarget[dead][help]
+/cast [stance:2/3]战斗姿态
+/equipslot [equipped:盾牌] 16 灾变之刃
+/cast 压制
+/startattack
+/cast 断筋
+
+
+
+pvp-zs-狂暴姿态
+
+#showtooltips 狂暴姿态
+/cleartarget[dead][help]
+/cast [stance:1/2]狂暴姿态
+/equipslot [equipped:盾牌] 16 灾变之刃
+/startattack
+
+
+
+{肖恩丶狂暴者;01团本-kbz;
+[无情突袭合剂],5,0;[加速药水],20,0;[屠魔药剂],5,0;[强效怒气药水],30,0;[力量卷轴 V],15,0;[敏捷卷轴 V],15,0;[保护卷轴 V],15,0;[烧烤裂蹄牛],20,0;[猫鼬药剂],10,0;[超级神风炸药],30,0;[地精工兵炸药],30,0;[魔铁炸弹],30,0;[治疗药水注射器],10,0;[精金平衡石],10,0;[元素磨刀石],10,0;[强效结界符文],5,0;[梦魇草],10,0;[献祭之油],20,0;[萨弗隆烈酒],10,0;
+}
+
+{东君;01团本-kbz;
+[无情突袭合剂],5,5;[加速药水],20,20;[屠魔药剂],5,5;[强效怒气药水],30,30;[力量卷轴 V],15,15;[敏捷卷轴 V],15,15;[保护卷轴 V],15,15;[烧烤裂蹄牛],20,20;[猫鼬药剂],10,10;[超级神风炸药],30,30;[地精工兵炸药],30,30;[魔铁炸弹],30,30;[治疗药水注射器],10,30;[精金平衡石],10,30;[元素磨刀石],10,30;[强效结界符文],5,5;[梦魇草],15,15;[献祭之油],20,20;[萨弗隆烈酒],20,20;
+}
+
+
+When a mob is attacking you, force show the threat color. For tanks, force threat color if the mob is not attacking you.
+Sets the nameplate alpha based on range and occlusion.
+Change the color of the aura timer by it's time left
+Show power bar for some units.
+Add a border around the current target.
+Adds a highlight glow to your target.
+Auto set skull marker
+Add a unitID or unit name in 'Add Trigger' entry. See the constructor script for options.
+Some units has special events without a clear way to show. This script adds a second cast bar to inform the user about it.
+Place a marker into the health bar to indicate when the unit will change phase or cast an important spell.
+Highlight a nameplate of an important Add. Add the unit name or NpcID into the trigger box to add more.
+Highlight a nameplate of an important Add. Add the unit name or NpcID into the trigger box to add more.

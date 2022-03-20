@@ -81,6 +81,11 @@ ss暗影
 /use [mod:alt] 13
 /cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][]暗影箭
 
+/targetenemy [help][dead][noexists]
+/use [mod:alt] 14
+/use [mod:alt] 13
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][]暗影箭
+/plater addnpc
 
 ss火雨
 
@@ -216,6 +221,12 @@ ss拉人
 /s 请旁边2位队友帮忙点一下门
 /script SendChatMessage("正在召唤>%t<→<"..GetMinimapZoneText()..">","raid")
 /script SendChatMessage("正在召唤你至<"..GetMinimapZoneText()..">，请耐心等待。","whisper",GetDefaultLanguage("target"),UnitName("target"))
+
+
+3左工程右裁缝
+
+#show
+/cast [mod:alt,button:2] 烹饪;[mod:alt] 急救;[button:2] 裁缝;工程学
 
 
 
@@ -429,11 +440,61 @@ end
 
 
 
+{羲和天照;00p3;
+[毁灭药水],20,20;[水煮蓝鱼],20,20;[骨鱼汤],20,20;[纯粹死亡合剂],5,5;[卓越巫师之油],2,2;[法力药水注射器],30,30;[黑暗符文],20,20;[厚灵纹布绷带],20,20;
+}
+
+
+{羲和天照;001speed;
+[纯粹死亡合剂],5,5;[卓越巫师之油],2,2;[强化药剂],10,0;[特效暗影能量药剂],10,0;[法力药水注射器],40,20;[毁灭药水],20,20;[迅捷药水],5,0;[黑暗符文],40,20;[自由行动药剂],5,0;[骨鱼汤],20,20;[梦魇草],20,20;[保护卷轴 V],10,0;[精神卷轴 V],10,0;[力量卷轴 V],2,0;[敏捷卷轴 V],2,0;[超级神风炸药],20,10;[地精工兵炸药],20,10;[精金手雷],10,0;[高级假人],5,0;[轻便型超级火箭靴],1,1;[侏儒隐形装置],1,1;[地精起搏器XL型],1,1;[灵巧秒表],1,1;[末日颅骨],1,1;[荆棘幼崽的种子],5,0;[侏儒喷火炮台],5,0;[萨弗隆烈酒],20,20;[夜晚之眼],1,0;[夜枭之链],1,0;[厚灵纹布绷带],10,10;[清洁的德拉诺之水],100,100;[地狱火石],5,5;[金布勒宠物食品],5,5;
+}
+
+a
+纯粹死亡合剂	5
+卓越巫师之油	5
+强化药剂	10
+特效暗影能量	10
+法力药水注射器 40
+毁灭药水	40
+黑暗符文	40
+自由行动药水	5
+骨鱼汤	20
+梦魇草	20
+保护卷轴	10
+精神卷轴	10
+力量卷轴	2
+敏捷卷轴	2
+超级神风炸药	20
+地精工兵炸药	20
+精金手雷	10
+高级假人	5
+超级火箭靴	1
+地精起搏器XL型	1
+灵巧秒表	1
+末日颅骨	1
+荆棘种子	5
+侏儒喷火炮台	5
+萨弗隆烈酒	20
+夜晚之眼	1
+夜枭之链	1
+德拉诺之水	100
+
+
+
+
+
 梦魇草
 魔尘
 荆棘幼崽的种子
 献祭之油
 特效魔法抗性药水
+地精暗雷
+
+
+{佐伯大铁子;00p3;
+[毁灭药水],20,0;[水煮蓝鱼],20,0;[骨鱼汤],20,0;[纯粹死亡合剂],5,0;[卓越巫师之油],2,0;[法力药水注射器],30,0;[黑暗符文],20,0;[厚灵纹布绷带],20,0;
+}
+
 
 {佐伯大铁子;01毒蛇;
 [毁灭药剂],20,0;[水煮蓝鱼],20,0;[骨鱼汤],20,0;[烈焰菇],20,0;[纯粹死亡合剂],5,0;[卓越巫师之油],2,0;[超级神风炸药],10,0;[地精工兵炸药],10,0;[法力药水注射器],20,0;[黑暗符文],20,0;[厚灵纹布绷带],20,0;[迅捷药水],5,0;[清洁的德拉诺之水],80,0;[超级活力药水],5,0;[灵纹投网],20,0;[水上行走药剂],5,0;[地精暗雷],5,0;
@@ -451,6 +512,27 @@ end
 {佐伯大铁子;zug;
 [古拉巴什疯狂魔精],100,0;[[打孔的巫毒人偶]],100,0;[[哈扎拉尔的梦境之丝]],100,0;[[格里雷克之血]],100,0;
 }
+
+
+[赞达拉荣誉勋章]
+[塞瑟的石墨鱼竿]
+[钓鱼大师鱼钩]
+[水上行走药剂]
+[迅捷药水]
+[速游药水]
+[明亮的小珠]
+[锐利的鱼钩]
+
+{佐伯大铁子;钓鱼大赛;
+[赞达拉荣誉勋章],1,0;[奥金钓鱼竿],1,0;[钓鱼大师鱼钩],1,0;[水上行走药剂],10,0;[迅捷药水],10,0;[速游药水],10,0;[明亮的小珠],20,0;[锐利的鱼钩],10,0;
+}
+
+
+{佐伯大铁子;钓鱼;
+[奥金钓鱼竿],1,0;[钓鱼大师鱼钩],1,0;[明亮的小珠],40,0;[锐利的鱼钩],10,0;[普通木柴],10,0;[燧石和火绒],10,0;[水下诱鱼器],10,0;
+}
+
+
 
 local e = aura_env
 if not _G[e.id.."Button"] then
@@ -588,5 +670,62 @@ JJC抓贼宏
 #showtooltip 死亡缠绕
 /stopcasting
 /Cast [target=focus,exists] 死亡缠绕;死亡缠绕
+
+
+local e = aura_env
+if not _G[e.id.."Button"] then
+    local region = WeakAuras.GetRegion(e.id)
+    e.btn = CreateFrame("Button", e.id.."Button", region, "SecureActionButtonTemplate")
+    e.btn:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+    e.btn:SetAttribute("type1","macro")
+    e.btn:SetAttribute("type2","macro")
+    e.btn:SetAllPoints(region)
+end 
+local btn = _G[e.id.."Button"]
+btn:SetAttribute("macrotext1","/use item:27500")
+btn:SetAttribute("macrotext2","/use item:27500")
+
+btn:SetScript("OnEnter", function(self)
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetText("|cffffffff左键：|r保护卷轴|cff04f192（"..GetItemCount(27500).."）|r\n|cffffffff右键：|r保护卷轴|cff04f192（"..GetItemCount(27500).."）|r", 0, 1, 0, 1, 1)
+end)
+btn:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
+
+
+local e = aura_env
+if not _G[e.id.."Button"] then
+    local region = WeakAuras.GetRegion(e.id)
+    e.btn = CreateFrame("Button", e.id.."Button", region, "SecureActionButtonTemplate")
+    e.btn:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+    e.btn:SetAttribute("type1","macro")
+    e.btn:SetAttribute("type2","macro")
+    e.btn:SetAllPoints(region)
+end 
+local btn = _G[e.id.."Button"]
+btn:SetAttribute("macrotext1","/use item:27501")
+btn:SetAttribute("macrotext2","/use item:27501")
+
+btn:SetScript("OnEnter", function(self)
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetText("|cffffffff左键：|r精神卷轴|cff04f192（"..GetItemCount(27501).."）|r\n|cffffffff右键：|r精神卷轴|cff04f192（"..GetItemCount(27501).."）|r", 0, 1, 0, 1, 1)
+end)
+btn:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
+
+local e = aura_env
+if not _G[e.id.."Button"] then
+    local region = WeakAuras.GetRegion(e.id)
+    e.btn = CreateFrame("Button", e.id.."Button", region, "SecureActionButtonTemplate")
+    e.btn:SetAttribute("type","macro")
+    e.btn:SetAllPoints(region)
+end
+
+local btn = _G[e.id.."Button"]
+btn:SetAttribute("macrotext","/use [target=player]item:27501")
+
+btn:SetScript("OnEnter", function(self)
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetText("|cffffffff左键：|r精神卷轴 V|cff04f192（"..GetItemCount(27501).."）", 0, 1, 0)
+end)
+btn:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
 
 

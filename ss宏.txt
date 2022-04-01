@@ -1,4 +1,296 @@
 
+0找人
+/tar 微笑的比隆
+
+
+1sm
+/follow 
+
+3假人
+#showtooltip 高级假人
+/use [target=player]高级假人
+
+3大蓝
+#showtooltips 法力药水注射器
+/use 奥金尼法力药水
+/use 超级法力药水
+/use 法力药水注射器
+/cqs
+
+3徽章
+/script SelectGossipAvailableQuest(1)
+/script CompleteQuest()
+/script GetQuestReward()
+
+3放掉线
+/use 强效不灭精华
+/use 次级不灭精华
+
+3炸药
+#showtooltips 超级神风炸药
+/use 超级神风炸药
+/use 地精工兵炸药
+
+3烈焰菇
+#showtooltips 烈焰菇
+/use 烈焰菇
+
+
+3焦点
+/clearfocus [target=focus,dead]
+/clearfocus [target=focus,noexists]
+/focus [@focus,exists]boss99;target
+
+3绷带
+/use [target=player] 厚灵纹布绷带
+
+3血瓶
+#showtootips 极效治疗石
+/use 战斗大师的活跃
+/use 梦魇草
+/use item:22105
+/use item:22103
+/use item:22104
+/use item:9421
+
+3钓鱼大赛
+/script GetQuestReward(1)
+
+3钓鱼鱼饵
+/cast [equipped:鱼竿]明亮的小珠
+/use [equipped:鱼竿]16
+
+
+3饰品上
+#showtooltips
+/use 13
+/cqs
+
+
+3饰品下
+#showtooltips
+/use 14
+/cqs
+
+3药饰品
+#showtooltips 毁灭药水
+/use 14
+/use 13
+/use 毁灭药水
+/cqs
+
+3黑暗
+#showtooltips 黑暗符文
+/use 黑暗符文
+/cqs
+
+4pvp
+/itemrack equip pvp
+
+4T5
+#showtootips 腐蚀者罩帽
+/itemrack equip 4T5
+
+4T6
+#showtootips 凶星头巾
+/itemrack equip 4t6
+
+4加速
+#showtootips 轻便型超级火箭靴
+/itemrack equip 加速
+
+4火焰
+#showtootips 裂心护符
+/itemrack equip 火焰
+
+4种子
+#showtootips 腐蚀之种
+/itemrack equip 种子
+
+4空
+/itemrack equip 空
+
+5下线
+/equip 超级火箭靴
+/equip 末日颅骨
+/equip 灵巧秒表
+/logout
+
+
+5传核
+/use 污染之核
+/大喊 我把污染之核传给:%T了!
+/script SendChatMessage("我把污染之核传给你了，%T","whisper",GetDefaultLanguage("target"),UnitName("target"))
+/script SetRaidTarget("target",2)
+
+5地狱火
+/use [target=pet] 敏捷卷轴 V
+/use [target=pet] 力量卷轴 V
+/use 金布勒宠物食品
+
+5瓦解
+#showtooltip 瓦解法杖
+/equip 16 瓦解法杖
+/use 16
+
+5督军
+/target 高阶督军纳因图斯 
+/use 纳因图斯之脊
+
+5祖母
+/use 轻便型超级火箭靴
+/cast 防护暗影结界
+/use 梦魇草
+
+5血魔
+/cast 灵魂箭雨
+/cast 灵魂锁链
+/cast 灵魂长枪
+
+
+
+pvp-减速
+#showtooltip 疲劳诅咒
+/cast 诅咒增幅
+/cast 疲劳诅咒
+/cast 暗影之怒
+
+pvp-抓贼
+/cleartarget
+/targetenemy
+/cast 痛苦诅咒  
+/petattack
+/cast 吞噬魔法
+
+
+ss宝回
+#showtooltip
+/petpassive
+/petfollow
+/stopmacro [mounted]
+/施放 [nocombat,pet]黑暗契约
+
+ss宝攻
+#showtooltip [pet:虚空行者]折磨;[pet:魅魔]剧痛鞭笞;[pet:地狱猎犬]吞噬魔法;火焰箭
+/petdefensive
+/targetenemy [help][dead][noexists]
+/petattack [@mouseover,harm] []
+/施放 [pet:虚空行者]折磨
+/施放 [pet:魅魔,@mouseover,harm][]剧痛鞭笞
+
+ss宝防
+#showtooltip [pet:虚空行者]受难;[pet:魅魔]安抚之吻;[pet:地狱猎犬]吞噬魔法;火焰之盾
+/equip [mod:shift]特效法术石
+/use [mod:shift]特效法术石
+/施放 [pet:小鬼,@targettarget]火焰之盾
+/施放 [pet:地狱猎犬,@player]吞噬魔法
+/施放 [pet:虚空行者,combat]受难;[nocombat]吞噬暗影
+/施放 [pet:魅魔,combat]安抚之吻;[nocombat]次级隐形术
+
+#showtooltip [pet:虚空行者]受难;[pet:魅魔]安抚之吻;[pet:地狱猎犬]吞噬魔法;火焰之盾
+/施放 [pet:小鬼,@targettarget]火焰之盾
+/施放 [pet:地狱猎犬,@focus,help,nodead,mod:shift][pet:地狱猎犬,@player]吞噬魔法
+/施放 [pet:虚空行者,combat]受难;[nocombat]吞噬暗影
+/施放 [pet:魅魔,combat]安抚之吻;[nocombat]次级隐形术
+
+
+
+ss宝控
+
+
+
+#showtooltip 恶魔支配
+/施放 [pet:虚空行者,combat]恶魔牺牲
+/施放 [combat,nopet] [@pet,dead] 恶魔支配
+/施放 [pet:虚空行者,combat]牺牲
+/施放 [pet:魅魔,@mouseover,harm][]诱惑
+/施放 [pet:地狱猎犬,@mouseover,harm][]法术封锁
+/施放 [mod:shift]召唤地狱猎犬;[mod:ctrl]召唤魅魔;[mod:alt]召唤虚空行者
+
+
+#showtooltip 
+/施放 [pet:虚空行者,combat]恶魔牺牲
+/施放 [pet:虚空行者,combat]牺牲
+/cast [pet:魅魔][@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]诱惑
+/cast [pet:地狱猎犬][@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]法术封锁
+
+
+pvp-瞬狗
+/施放 恶魔支配
+/施放 召唤地狱猎犬(召唤)
+
+pvp-瞬胖
+/施放 恶魔支配
+/施放 召唤虚空行者
+
+pvp-开噬
+/petautocaston 吞噬魔法
+
+pvp-关噬
+/petautocastoff 吞噬魔法
+
+
+pvp-终技
+#showtooltip [pet:地狱猎犬]灵魂链接;[pet:虚空行者]灵魂链接;[pet:魅魔]灵魂链接;[class:痛苦]痛苦无常;[class:毁灭]暗影之怒
+/petpassive
+/script SetRaidTarget("pet",4);
+/cast 暗影之怒
+/cast 痛苦无常
+/cast 灵魂链接
+
+
+pvp-法石 
+#showtooltip 极效法术石
+/cast 制造法术石
+/use 极效法术石
+/equip 遗忘之星
+/equip 极效法术石
+
+
+智能做糖一条龙(分2个宏)。宏1：当队友少于2人时，按第1次，搓满级糖，按第二次，搓低级糖(2V2中会搓2颗)。当队友大于等于2人时，按1次，自动拉糖井。无论几个队友，当有友方目标时，每一次按宏都会自动打开与该目标的交易页面。宏2：按第1次时，自动拖入交易列表所有等级的治疗师，按第2次时确认交易
+
+
+pvp-糖1
+/cast [target=party2,exists,nocombat]灵魂仪式(等级 1)
+/castsequence [nocombat] reset=5 制造治疗石(等级 6),制造治疗石(等级 5)
+/交易
+/cleartarget
+
+pvp-糖2
+/run for b=0,NUM_BAG_SLOTS do for s= 1, 32, 1 do local name = GetContainerItemLink(b,s); if name and string.find(name,"治疗石") then PickupContainerItem(b,s) UseContainerItem(b,s) end end end
+/script AcceptTrade();
+/click StaticPopup1Button1
+
+
+ss-侦/腐
+/cast [harm]腐蚀术(等级 1)
+/cast [help]侦测隐形
+/cast [exsist]侦测隐形
+
+ss-吸/息
+/cast [harm]生命虹吸(等级 1)
+/cast [help]魔息术
+/cast [exsist]魔息术
+
+ss-命宝
+#showtooltip
+/petpassive 
+/petfollow
+/cast [nochanneling:生命通道] 生命通道
+
+ss-生命
+#showtooltip
+/cast [nochanneling:吸取生命] 吸取生命
+
+ss-蓝
+#showtooltip
+/cast [nochanneling:吸取法力] 吸取法力
+
+ss-邪/魔
+/cast [button:2] 魔甲术;邪甲术
+
+
+
 ss元素
 
 #showtooltip 元素诅咒
@@ -6,28 +298,15 @@ ss元素
 /cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]元素诅咒
 
 
-
-ss减速
-
-#showtooltip 疲劳诅咒
-/cast 诅咒增幅
-/cast 疲劳诅咒
-/cast 暗影之怒
-
-
 ss厄运
-
-#showtooltip 厄运诅咒
-/targetenemy [help][dead][noexists]
-/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]厄运诅咒
-
-
 #showtooltip 厄运诅咒
 /targetenemy [help][dead][noexists]
 /cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][]厄运诅咒
 
-ss射击
 
+
+
+ss射击
 #showtooltip
 /petattack
 /petattack [@根基图腾]
@@ -37,107 +316,137 @@ ss射击
 /cast [@mouseover,harm,nodead]射击
 /cast !射击
 
-
 ss恐惧
+#showtooltip [mod:ctrl]恐惧嚎叫; 恐惧
+/cast [mod:shift]恐惧嚎叫
+/targetenemy [help][dead][noexists]
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]恐惧
 
 #showtooltip [mod:ctrl]恐惧嚎叫; 恐惧
+/stopcasting
 /cast [mod:ctrl]恐惧嚎叫
 /targetenemy [help][dead][noexists]
 /cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]恐惧
 
-ss拉糖
 
+ss拉人
+#showtooltip
+/cast [nochanneling:召唤仪式] 召唤仪式
+/s 请旁边2位队友帮忙点一下门
+/script SendChatMessage("正在召唤>%t<→<"..GetMinimapZoneText()..">","raid")
+/script SendChatMessage("正在召唤你至<"..GetMinimapZoneText()..">，请耐心等待。","whisper",GetDefaultLanguage("target"),UnitName("targe
+
+ss拉糖
 /Y 正在召唤治疗石.请队友配合地点门
 /raid 正在召唤治疗石.请队友配合地点门
 /cast 灵魂仪式
 
-
 ss放逐
 
-
-#showtooltip 放逐术
-/stopcasting
-/targetenemy [help][dead][noexists]
-/施放 [help][noexists]魔息术
-/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]放逐术
-
-
-
-#showtooltip 放逐术
-/stopcasting
-/施放 [help]魔息术
-/cast [@focus,harm,nodead][@targettarget,harm,nodead][mod:shift]放逐术(等级 1); 放逐术
-
 #showtooltip 放逐术
 /施放 [help]魔息术
-/cast [@focus,harm,nodead][@targettarget,harm,nodead][mod:shift]放逐术(等级 1); 放逐术
-
-
+/cast [@focus,harm,nodead][@targettarget,harm,nodead][mod:ctrl]放逐术(等级 1); 放逐术
 
 ss暗影
-
 /targetenemy [help][dead][noexists]
-/use [mod:alt] 14
-/use [mod:alt] 13
 /cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][]暗影箭
-
-/targetenemy [help][dead][noexists]
-/use [mod:alt] 14
-/use [mod:alt] 13
-/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][]暗影箭
-/plater addnpc
 
 ss火雨
-
 #showtooltip
 /cast [mod:ctrl]火焰之雨(等级 1)
 /cast [mod:shift]地狱烈焰
 /cast 火焰之雨
 
-
-
-ss灼热
-
-#showtooltip 灼热之痛
-/targetenemy [help][dead][noexists]
-/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]灼热之痛
-
 ss灼烧
-
 #showtooltip 暗影灼烧
 /stopcasting
 /targetenemy [help][dead][noexists]
 /cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]暗影灼烧
 
+ss灼热
+#showtooltip 灼热之痛
+/targetenemy [help][dead][noexists]
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]灼热之痛
+
 ss烧尽
 
 #showtooltip
 /targetenemy [help][dead][noexists]
-/use [mod:alt] 14
-/use [mod:alt] 13
 /cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][]烧尽
 
-
-
 ss燃烧眼睛
-
 #show [mod:ctrl]基尔罗格之眼;[nocombat,nomod]魔法点心;[combat,nomod]燃烧;
 /施放 [mod:ctrl]基尔罗格之眼
 /targetenemy [help][dead][noexists]
 /cast [@targettarget,harm,nodead][@mouseover,harm,nodead][]燃烧
+/cast [@targettarget,harm,nodead][@mouseover,harm,nodead][]生命虹吸
 /use [nocombat]魔法冰川水
 /use [nocombat]清洁的德拉诺之水
 
-ss献祭
-
-#showtooltip 献祭
+#show [nocombat]魔法冰川水;[combat]燃烧;
 /targetenemy [help][dead][noexists]
-/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]献祭
+/cast [@targettarget,harm,nodead][@mouseover,harm,nodead][]燃烧
+/cast [@targettarget,harm,nodead][@mouseover,harm,nodead][]生命虹吸
+/use [nocombat]魔法冰川水
+/use [nocombat]清洁的德拉诺之水
 
 
+ss献祭
 #showtooltip 献祭
 /targetenemy [help][dead][noexists]
 /cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][]献祭
+
+ss痛苦
+#showtooltip 痛苦诅咒
+/targetenemy [help][dead][noexists]
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]痛苦诅咒
+
+ss碎裂
+#showtooltip [nomod:ctrl]灵魂碎裂;地狱火
+/施放 [mod:ctrl]地狱火
+/施放 [nomod]灵魂碎裂
+
+ss种子
+
+#showtooltip 腐蚀之种
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][]腐蚀之种
+
+
+ss缠绕
+#showtooltip [nomod:ctrl]死亡缠绕;奴役恶魔
+/stopcasting
+/施放 [mod:ctrl]奴役恶魔
+/cast [@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]死亡缠绕
+/stopmacro [nohelp,combat]
+
+
+ss腐蚀
+#showtooltip 腐蚀术
+/targetenemy [help][dead][noexists]
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]腐蚀术
+
+ss虚弱
+#showtooltip 虚弱诅咒
+/cast [nomod]诅咒增幅
+/targetenemy [help][dead][noexists]
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]虚弱诅咒
+
+ss语言
+#showtooltip 语言诅咒
+/cast [nomod]诅咒增幅
+/targetenemy [help][dead][noexists]
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]语言诅咒
+
+
+ss鲁莽
+
+#showtooltip 鲁莽诅咒
+/cast [nomod]诅咒增幅
+/targetenemy [help][dead][noexists]
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]鲁莽诅咒
+
+
+备用
 
 
 ss生命
@@ -152,82 +461,6 @@ ss生命2
 /cast 生命分流
 /use 魔法冰川水
 /use 清洁的德拉诺之水
-
-ss痛苦
-
-#showtooltip 痛苦诅咒
-/targetenemy [help][dead][noexists]
-/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]痛苦诅咒
-
-ss碎裂
-
-#showtooltip [nomod:ctrl]灵魂碎裂;地狱火
-/施放 [mod:ctrl]地狱火
-/施放 [nomod]灵魂碎裂
-
-
-
-ss种子
-
-
-#showtooltip 腐蚀之种
-/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]腐蚀之种
-
-
-#showtooltip 腐蚀之种
-/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][]腐蚀之种
-
-ss缠绕
-
-#showtooltip [nomod:ctrl]死亡缠绕;奴役恶魔
-/stopcasting
-/施放 [mod:ctrl]奴役恶魔
-/cast [@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]死亡缠绕
-/stopmacro [nohelp,combat]
-
-
-ss腐蚀
-
-#showtooltip 腐蚀术
-/targetenemy [help][dead][noexists]
-/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]腐蚀术
-
-ss虚弱
-
-#showtooltip 虚弱诅咒
-/cast [nomod]诅咒增幅
-/targetenemy [help][dead][noexists]
-/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]虚弱诅咒
-
-ss语言
-
-#showtooltip 语言诅咒
-/cast [nomod]诅咒增幅
-/targetenemy [help][dead][noexists]
-/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]语言诅咒
-
-ss鲁莽
-
-#showtooltip 鲁莽诅咒
-/cast [nomod]诅咒增幅
-/targetenemy [help][dead][noexists]
-/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]鲁莽诅咒
-
-
-ss拉人
-
-#showtooltip
-/cast [nochanneling:召唤仪式] 召唤仪式
-/s 请旁边2位队友帮忙点一下门
-/script SendChatMessage("正在召唤>%t<→<"..GetMinimapZoneText()..">","raid")
-/script SendChatMessage("正在召唤你至<"..GetMinimapZoneText()..">，请耐心等待。","whisper",GetDefaultLanguage("target"),UnitName("target"))
-
-
-3左工程右裁缝
-
-#show
-/cast [mod:alt,button:2] 烹饪;[mod:alt] 急救;[button:2] 裁缝;工程学
-
 
 
 
@@ -244,47 +477,6 @@ GSE
 /dismount [mounted]
 
 
-#showtooltip [pet:虚空行者]折磨;[pet:魅魔]剧痛鞭笞;[pet:地狱猎犬]吞噬魔法;火焰箭
-/petdefensive
-/targetenemy [help][dead][noexists]
-/petattack [@mouseover,harm] []
-/施放 [mod:shift]地狱火
-/施放 [pet:虚空行者]折磨
-/施放 [pet:魅魔,@mouseover,harm][]剧痛鞭笞
-/施放 [pet:地狱猎犬,@mouseover,harm][help][]吞噬魔法
-
-
-
-
-#showtooltip [pet:虚空行者]受难;[pet:魅魔]安抚之吻;[pet:地狱猎犬]吞噬魔法;火焰之盾
-/equip [mod:shift]特效法术石
-/use [mod:shift]特效法术石
-/施放 [pet:小鬼,@targettarget]火焰之盾
-/施放 [pet:地狱猎犬,@player]吞噬魔法
-/施放 [pet:虚空行者,combat]受难;[nocombat]吞噬暗影
-/施放 [pet:魅魔,combat]安抚之吻;[nocombat]次级隐形术
-
-
-
-有能力的同学可以用Cube或者宏(前面加/run)来运行类似下面的代码，用来为特定按键绑定宏处理，其中%unit会被替换为实际的unit。比较简单不多做解释。
-
-Scorpio.Secure.UnitFrame.HoverSpellGroups.AshToAsh.MacroText["/target %unit"].Key = "SHIFT-BUTTON1"
-
-有用的宏
-
-
-/clearfocus [target=focus,dead]
-/clearfocus [target=focus,noexists]
-
-
-
-
-
-
-
-/script SILVER_PER_GOLD =0.001
-
-
 
 一键设定焦点 取消焦点 
 
@@ -294,73 +486,14 @@ Scorpio.Secure.UnitFrame.HoverSpellGroups.AshToAsh.MacroText["/target %unit"].Ke
 
 
 
-
-/run SetCVar ('nameplateOtherTopInset', '0.15')
-/run SetCVar ('nameplateLargeTopInset', '0.15')
-/run SetCVar ('clampTargetNameplateToScreen', 1)
-
-
-/run SetCVar("nameplateMaxDistance", "41")
-
-ss-class:warlock, dps-class:warlock
-
 /5  节日五连 来T N DPS 来清白cd
 /6  节日五连 来T N DPS 来清白cd
 /7  节日五连 来T N DPS 来清白cd
 
 
-我本人在pve中很少用到宏，比如鼠标指向dot，切目标种子，一键DOT宏，此TXT文件内 pvp宏和日常宏较多
 
 
-BB技能  牺牲 魅惑  反制 拦截 火盾 
-#showtooltip [pet:虚空行者]牺牲;[pet:魅魔]诱惑;[pet:地狱猎犬]法术封锁;[pet:恶魔卫士]拦截;[pet:小鬼]火焰之盾
-/施放 [pet:虚空行者,combat][]牺牲
-/施放 [pet:魅魔,@mouseover,harm][]诱惑
-/施放 [pet:地狱猎犬,@mouseover,harm][]法术封锁 
-/施放 [pet:恶魔士士,@mouseover,harm][]拦截
-/施放 [pet:小鬼,@mouseover,harm][]火焰之盾
 
-
-吃魔法  自己/shift-1队友/alt-2队友
-#showtooltip 吞噬魔法
-/cast [target=player,nomod][target=Party1,mod:shift][target=Party2,mod:alt][target=pet,mod:ctrl] 吞噬魔法
-
-宠物回身+加血技能宏 狂按不断
-/petpassive 
-/petfollow
-/cast [nochanneling:生命通道] 生命通道
-
-
-恐惧骗反
-#showtooltip 恐惧
-/stopcasting
-/cast 恐惧
-
-
-法术石和魔杖换装宏
-/cast [equipped:魔杖,modifier:alt] 射击;[equipped:圣物] 极效法术石;[noequipped:圣物]制造法术石
-/equip [noequipped:魔杖,modifier:alt] 灵翼魔杖;[noequipped:圣物] 极效法术石
-
-22JJC 2种治疗石+无敌腰带宏
-
-#showtooltips
-/castsequence [button:2] reset=60 制造治疗石(等级 6), 制造治疗石(等级 5)
-/stopmacro [button:2]
-/use 极效治疗石
-/use 特效治疗石
-/use 近似无敌腰带
-
-
-焦点宏
-吞噬焦点魔法
-#showtooltip 吞噬魔法
-/stopcasting
-/Cast [target=focus,exists] 吞噬魔法;吞噬魔法
-
-反制焦点魔法
-#showtooltip 法术封锁
-/stopcasting
-/Cast [target=focus,exists] 法术封锁;法术封锁
 
 
 function(trigger)
@@ -554,178 +687,6 @@ end)
 btn:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
 
 
-pvp 宏
 
-
-我本人在pve中很少用到宏，比如鼠标指向dot，切目标种子，一键DOT宏，此TXT文件内 pvp宏和日常宏较多
-
-走喝切刀宏
-#showtooltip
-/施放 [mod:shift]生命分流
-/equip [mod:shift]巫术之刃
-/equip [mod:shift]纳斯雷兹姆心灵之刃
-/施放 [nomod]生命分流
-/use 清洁的德拉诺之水
-
-3种糖的宏
-/use item:22105
-/use item:22104
-/use item:22103
-
-一键坐骑宏
-#showtooltip 塞纳里奥作战角鹰兽
-/cast [flyable,nocombat]塞纳里奥作战角鹰兽;[nocombat]召唤恐惧战马(召唤)
-
-
-BB技能  牺牲 魅惑  反制 拦截 火盾 
-#showtooltip [pet:虚空行者]牺牲;[pet:魅魔]诱惑;[pet:地狱猎犬]法术封锁;[pet:恶魔卫士]拦截;[pet:小鬼]火焰之盾
-/施放 [pet:虚空行者,combat][]牺牲
-/施放 [pet:魅魔,@mouseover,harm][]诱惑
-/施放 [pet:地狱猎犬,@mouseover,harm][]法术封锁 
-/施放 [pet:恶魔士士,@mouseover,harm][]拦截
-/施放 [pet:小鬼,@mouseover,harm][]火焰之盾
-
-疲劳诅咒宏
-#showtooltip 疲劳诅咒
-/cast 诅咒增幅
-/cast 疲劳诅咒
-/cast 暗影之怒
-
-
-厄运&虹吸
-#showtooltip
-/cast 生命虹吸
-/cast 厄运诅咒
-
-吃魔法  自己/shift-1队友/alt-2队友
-#showtooltip 吞噬魔法
-/cast [target=player,nomod][target=Party1,mod:shift][target=Party2,mod:alt][target=pet,mod:ctrl] 吞噬魔法
-
-宠物回身+加血技能宏 狂按不断
-/petpassive 
-/petfollow
-/cast [nochanneling:生命通道] 生命通道
-
-吸血 吸蓝
-#showtooltip
-/cast [nochanneling:吸取生命] 吸取生命
-	
-恐惧骗反
-#showtooltip 恐惧
-/stopcasting
-/cast 恐惧
-
-
-放逐 目标或指向
-#showtooltip 放逐术
-/stopcasting
-/cast [target=mouseover] 放逐术
-
-增幅痛苦（其他同理）
-#showtooltip 痛苦诅咒
-/cast 诅咒增幅
-/stopcasting
-/cast 痛苦诅咒
-
-顺唤 胖子or狗
-#showtooltip 召唤地狱猎犬
-/cast 牺牲
-/cast 恶魔支配
-/cast 召唤地狱猎犬
-
-法术石和魔杖换装宏
-/cast [equipped:魔杖,modifier:alt] 射击;[equipped:圣物] 极效法术石;[noequipped:圣物]制造法术石
-/equip [noequipped:魔杖,modifier:alt] 灵翼魔杖;[noequipped:圣物] 极效法术石
-
-22JJC 2种治疗石+无敌腰带宏
-
-#showtooltips
-/castsequence [button:2] reset=60 制造治疗石(等级 6), 制造治疗石(等级 5)
-/stopmacro [button:2]
-/use 极效治疗石
-/use 特效治疗石
-/use 近似无敌腰带
-
-JJC抓贼宏
-
-/cleartarget
-/targetenemy
-/cast 痛苦诅咒  
-/petattack
-/cast 吞噬魔法 
-
-
-焦点宏
-吞噬焦点魔法
-#showtooltip 吞噬魔法
-/stopcasting
-/Cast [target=focus,exists] 吞噬魔法;吞噬魔法
-
-反制焦点魔法
-#showtooltip 法术封锁
-/stopcasting
-/Cast [target=focus,exists] 法术封锁;法术封锁
-
-焦点死缠
-#showtooltip 死亡缠绕
-/stopcasting
-/Cast [target=focus,exists] 死亡缠绕;死亡缠绕
-
-
-local e = aura_env
-if not _G[e.id.."Button"] then
-    local region = WeakAuras.GetRegion(e.id)
-    e.btn = CreateFrame("Button", e.id.."Button", region, "SecureActionButtonTemplate")
-    e.btn:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-    e.btn:SetAttribute("type1","macro")
-    e.btn:SetAttribute("type2","macro")
-    e.btn:SetAllPoints(region)
-end 
-local btn = _G[e.id.."Button"]
-btn:SetAttribute("macrotext1","/use item:27500")
-btn:SetAttribute("macrotext2","/use item:27500")
-
-btn:SetScript("OnEnter", function(self)
-        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-        GameTooltip:SetText("|cffffffff左键：|r保护卷轴|cff04f192（"..GetItemCount(27500).."）|r\n|cffffffff右键：|r保护卷轴|cff04f192（"..GetItemCount(27500).."）|r", 0, 1, 0, 1, 1)
-end)
-btn:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
-
-
-local e = aura_env
-if not _G[e.id.."Button"] then
-    local region = WeakAuras.GetRegion(e.id)
-    e.btn = CreateFrame("Button", e.id.."Button", region, "SecureActionButtonTemplate")
-    e.btn:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-    e.btn:SetAttribute("type1","macro")
-    e.btn:SetAttribute("type2","macro")
-    e.btn:SetAllPoints(region)
-end 
-local btn = _G[e.id.."Button"]
-btn:SetAttribute("macrotext1","/use item:27501")
-btn:SetAttribute("macrotext2","/use item:27501")
-
-btn:SetScript("OnEnter", function(self)
-        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-        GameTooltip:SetText("|cffffffff左键：|r精神卷轴|cff04f192（"..GetItemCount(27501).."）|r\n|cffffffff右键：|r精神卷轴|cff04f192（"..GetItemCount(27501).."）|r", 0, 1, 0, 1, 1)
-end)
-btn:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
-
-local e = aura_env
-if not _G[e.id.."Button"] then
-    local region = WeakAuras.GetRegion(e.id)
-    e.btn = CreateFrame("Button", e.id.."Button", region, "SecureActionButtonTemplate")
-    e.btn:SetAttribute("type","macro")
-    e.btn:SetAllPoints(region)
-end
-
-local btn = _G[e.id.."Button"]
-btn:SetAttribute("macrotext","/use [target=player]item:27501")
-
-btn:SetScript("OnEnter", function(self)
-        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-        GameTooltip:SetText("|cffffffff左键：|r精神卷轴 V|cff04f192（"..GetItemCount(27501).."）", 0, 1, 0)
-end)
-btn:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
 
 

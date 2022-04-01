@@ -1,7 +1,0 @@
-## Interface: 11302
-## Title: ProgressSunder
-## Notes: Progress Sunder Tracking Addon
-## Author: Hata
-## Version: 1
-## SavedVariables: 
-ProgressSunder.lua

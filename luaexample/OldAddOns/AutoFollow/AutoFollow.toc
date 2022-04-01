@@ -1,7 +1,0 @@
-## Interface: 11302
-## Notes: Does /follow <name> every few seconds so if follow breaks it will refollow.
-## Title: AutoFollow
-## Author: Novaspark-Arugal OCE
-## Version: 1.1
-
-AutoFollow.lua

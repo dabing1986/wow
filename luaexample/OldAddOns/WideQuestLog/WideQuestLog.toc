@@ -1,5 +1,0 @@
-## Interface: 11302
-## Title: Wide Quest Log
-## Author: Bloodline
-## Notes: Doubles the Width of the Quest Log
-WideQuestLog.lua

@@ -41,6 +41,7 @@
 /clearfocus [target=focus,noexists]
 /focus [@focus,exists]boss99;target
 
+
 3绷带
 /use [target=player] 厚灵纹布绷带
 
@@ -177,6 +178,7 @@ ss宝攻
 /petattack [@mouseover,harm] []
 /施放 [pet:虚空行者]折磨
 /施放 [pet:魅魔,@mouseover,harm][]剧痛鞭笞
+/施放 [pet:黑暗爪牙,@mouseover,harm][]暗影箭雨
 
 ss宝防
 #showtooltip [pet:虚空行者]受难;[pet:魅魔]安抚之吻;[pet:地狱猎犬]吞噬魔法;火焰之盾
@@ -197,8 +199,6 @@ ss宝防
 
 ss宝控
 
-
-
 #showtooltip 恶魔支配
 /施放 [pet:虚空行者,combat]恶魔牺牲
 /施放 [combat,nopet] [@pet,dead] 恶魔支配
@@ -213,6 +213,14 @@ ss宝控
 /施放 [pet:虚空行者,combat]牺牲
 /cast [pet:魅魔][@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]诱惑
 /cast [pet:地狱猎犬][@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]法术封锁
+
+
+ss-命宝
+#showtooltip
+/petpassive 
+/petfollow
+/cast [nochanneling:生命通道] 生命通道
+
 
 
 pvp-瞬狗
@@ -272,15 +280,18 @@ ss-吸/息
 /cast [help]魔息术
 /cast [exsist]魔息术
 
-ss-命宝
-#showtooltip
-/petpassive 
-/petfollow
-/cast [nochanneling:生命通道] 生命通道
 
 ss-生命
 #showtooltip
 /cast [nochanneling:吸取生命] 吸取生命
+
+
+ss-生命虹吸
+#showtooltip 生命虹吸
+/targetenemy [help][dead][noexists]
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]生命虹吸
+
+
 
 ss-蓝
 #showtooltip
@@ -334,7 +345,7 @@ ss拉人
 /cast [nochanneling:召唤仪式] 召唤仪式
 /s 请旁边2位队友帮忙点一下门
 /script SendChatMessage("正在召唤>%t<→<"..GetMinimapZoneText()..">","raid")
-/script SendChatMessage("正在召唤你至<"..GetMinimapZoneText()..">，请耐心等待。","whisper",GetDefaultLanguage("target"),UnitName("targe
+/script SendChatMessage("正在召唤你至<"..GetMinimapZoneText()..">，请耐心等待。","whisper",GetDefaultLanguage("target"),UnitName("target"))
 
 ss拉糖
 /Y 正在召唤治疗石.请队友配合地点门
@@ -349,7 +360,11 @@ ss放逐
 
 ss暗影
 /targetenemy [help][dead][noexists]
+/use [mod:alt] 14
+/use [mod:alt] 13
 /cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][]暗影箭
+
+
 
 ss火雨
 #showtooltip
@@ -362,6 +377,13 @@ ss灼烧
 /stopcasting
 /targetenemy [help][dead][noexists]
 /cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]暗影灼烧
+
+
+ss灼烧
+#showtooltip 暗影灼烧
+/targetenemy [help][dead][noexists]
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]暗影灼烧
+
 
 ss灼热
 #showtooltip 灼热之痛
@@ -391,6 +413,30 @@ ss燃烧眼睛
 /use [nocombat]清洁的德拉诺之水
 
 
+#show [nocombat]魔法冰川水;[combat]燃烧;
+
+#showtooltip
+/targetenemy [help][dead][noexists]
+/cast [@targettarget,harm,nodead][@mouseover,harm,nodead][]燃烧
+/cast 暗影之怒
+/cast [@targettarget,harm,nodead][@mouseover,harm,nodead][]生命虹吸
+/use [nocombat]魔法冰川水
+/use [nocombat]清洁的德拉诺之水
+
+#showtooltip
+/cast [talent:8/1] 暗影之怒
+/cast [talent:5/2] 生命虹吸
+
+#showtooltip
+/targetenemy [help][dead][noexists]
+/cast [@targettarget,harm,nodead][@mouseover,harm,nodead][]燃烧
+/cast 暗影之怒
+/cast [@targettarget,harm,nodead][@mouseover,harm,nodead][]生命虹吸
+/use [nocombat]魔法冰川水
+/use [nocombat]清洁的德拉诺之水
+/run local G=GetSpellInfo SetMacroSpell(GetRunningMacro(), G"暗影之怒" or G"生命虹吸" or G"燃烧")
+
+
 ss献祭
 #showtooltip 献祭
 /targetenemy [help][dead][noexists]
@@ -410,6 +456,13 @@ ss种子
 
 #showtooltip 腐蚀之种
 /cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][]腐蚀之种
+
+
+#showtooltip 腐蚀之种
+/targetenemy [help][dead][noexists]
+/use [mod:alt] 14
+/use [mod:alt] 13
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]腐蚀之种
 
 
 ss缠绕
@@ -478,11 +531,6 @@ GSE
 
 
 
-一键设定焦点 取消焦点 
-
-/clearfocus [target=focus,dead]
-/clearfocus [target=focus,noexists]
-/focus [@focus,exists]boss99;target
 
 
 
@@ -491,66 +539,6 @@ GSE
 /7  节日五连 来T N DPS 来清白cd
 
 
-
-
-
-
-
-function(trigger)
-    local f = WeakAuras["regions"][aura_env.id]["region"]
-    if trigger[1] and trigger[2] then
-        if trigger[3] then
-            f.activeAura = false 
-        else
-            f.activeAura = true
-        end
-        
-    else
-        f.activeAura = false
-    end
-    return f.activeAura
-end
-
-
-帮助快速的进行副本物资准备：
-一个完整的配置有3组数据，每组数据用";"号隔开，组数据的子数据用","隔开，然后用{}括起来，注意所有符号必须是英文（小写）符号。
-第一组：角色名字， 如果所有角色都载入此数据请直接输入 |cffff0000所有角色|r 来代替。
-第二组：归类标识，此组数据含3个子数据，分别为 |cffff0000类名|r,|cffff0000类简单说明|r,|cffff0000自定义图标|r。第2、3个数据可以不输入。
-第三组：物资设置，每个物资设置用"|cffff0000;|r"隔开。每个物资设置有3个数据，按顺序为|cffff0000物品名|r,|cffff0000取物资时背包需求数量|r,|cffff0000存物资时背包保留数量|r。可以不输入数量，默认数量为取出1，保留0。例如 |cffff0000|cffffffff|Hitem:22829::::::::70:::::::::|h[超级治疗药水]|h|r,10,5|r，代表取物资时取够10个，存药水时保留5个。
-注意：|cff00ff00物品名可以是链接，也可以直接输入名字，由于装备具有附魔等特性，建议装备使用链接|r。可以使用回车换行来使数据具有可读性。
-数据构成：
-{角色名字,多个角色名字用|cffff0000,|r分开;类名,类说明,类图标;物资名1,取数量,存留数量;物资名2,取数量,存留数量;}
-2个例子：
-{所有角色;毒蛇,毒蛇副本的物资准备,133333;|cffffffff|Hitem:22829::::::::70:::::::::|h[超级治疗药水]|h|r,10,5;|cffffffff|Hitem:22849::::::::70:::::::::|h[铁盾药水]|h|r,20,5}
-{角色1,角色2;冰,冰抗装备;|cffa335ee|Hitem:31371::::::::70:::::::::|h[寒冰卫士头盔]|h|r;|cff0070dd|Hitem:24093::::::::70:::::::::|h[融雪坠饰]|h|r;|cffa335ee|Hitem:22658::::::::70:::::::::|h[冰川披风]|h|r;|cffa335ee|Hitem:31370::::::::70:::::::::|h[寒冰卫士护腿]|h|r;|cffa335ee|Hitem:31369::::::::70:::::::::|h[寒冰卫士胸甲]|h|r}
-
-
-
-
-
-
-{牤子;冰抗,冰抗装备;
-[寒冰卫士头盔];[融雪坠饰];[冰川披风];[寒冰卫士胸甲];[寒冰卫士护腿];[冰霜之眼];
-[时间流逝碎片];
-[老兵的板甲护腕];
-}
-{牤子;奥抗,奥抗装备;
-[奥法防护之旋轮护目镜],1,0;[空洞符文坠饰],1,0;[灵魂布护肩],1,0;[奥术闪避披风],1,0;[灵魂布外衣],1,0;[奥法交织护腕],1,0;[灵魂布手套],1,0;[魔化精金腰带],1,0;[魔化精金护腿],1,0;[奥法交织长靴],1,0;[奥术护盾指环],1,0;[紫罗兰徽章],1,0;[沙塔尔纹章盾],1,0;
-}
-{部落的娇花;自抗,自然抗装备;
-[野性卫士头盔],1,0;[凋零坠饰],1,0;[自然防护之琥珀斗篷],1,0;[野性卫士胸甲],1,0;[老兵的板甲护腕],1,0;[野性卫士护腿],1,0;[自然屏障],1,0;[时间流逝碎片],1,0;
-}
-{部落的娇花;奥抗,奥抗装备;
-[奥法防护之旋轮护目镜],1,0;[空洞符文坠饰],1,0;[灵魂布护肩],1,0;[奥术闪避披风],1,0;[灵魂布外衣],1,0;[奥法交织护腕],1,0;[灵魂布手套],1,0;[魔化精金腰带],1,0;[魔化精金护腿],1,0;[奥法交织长靴],1,0;[奥术护盾指环],1,0;[紫罗兰徽章],1,0;}
-{所有角色;卷轴,力敏甲卷轴;
-[力量卷轴 V],10,0;[敏捷卷轴 V],10,0;[保护卷轴 V],10,0;[战地修理机器人110G],5,0;
-}
-{所有角色;药水,坦的药水食物合剂;
-[强固合剂],5,0;[超级治疗药水],10,5;[铁盾药水],20,5;[特效防御药剂],20,20;[特效敏捷药剂],20,20;[热辣塔布羊排],20,20;[香辣小龙虾],20,20;[渔夫的美味],20,20;
-}
-{部落的娇花;冰,冰抗装备;
-[寒冰卫士头盔];[融雪坠饰];[冰川披风];[寒冰卫士胸甲];[老兵的板甲护腕];[寒冰卫士护腿];[冰霜之眼];[时间流逝碎片]
-}
 
 毁灭药剂
 水煮蓝鱼
@@ -580,6 +568,15 @@ end
 
 {羲和天照;001speed;
 [纯粹死亡合剂],5,5;[卓越巫师之油],2,2;[强化药剂],10,0;[特效暗影能量药剂],10,0;[法力药水注射器],40,20;[毁灭药水],20,20;[迅捷药水],5,0;[黑暗符文],40,20;[自由行动药剂],5,0;[骨鱼汤],20,20;[梦魇草],20,20;[保护卷轴 V],10,0;[精神卷轴 V],10,0;[力量卷轴 V],2,0;[敏捷卷轴 V],2,0;[超级神风炸药],20,10;[地精工兵炸药],20,10;[精金手雷],10,0;[高级假人],5,0;[轻便型超级火箭靴],1,1;[侏儒隐形装置],1,1;[地精起搏器XL型],1,1;[灵巧秒表],1,1;[末日颅骨],1,1;[荆棘幼崽的种子],5,0;[侏儒喷火炮台],5,0;[萨弗隆烈酒],20,20;[夜晚之眼],1,0;[夜枭之链],1,0;[厚灵纹布绷带],10,10;[清洁的德拉诺之水],100,100;[地狱火石],5,5;[金布勒宠物食品],5,5;
+}
+
+
+{羲和天照;002BT;
+[纯粹死亡合剂],5,5;[卓越巫师之油],2,2;[强化药剂],10,0;[特效暗影能量药剂],10,0;[法力药水注射器],40,20;[毁灭药水],10,10;[黑暗符文],30,10;[自由行动药剂],5,0;[骨鱼汤],20,20;[梦魇草],20,20;[保护卷轴 V],10,0;[精神卷轴 V],10,0;[力量卷轴 V],2,0;[敏捷卷轴 V],2,0;[超级神风炸药],20,10;[地精工兵炸药],20,10;[精金手雷],10,0;[高级假人],5,0;[轻便型超级火箭靴],1,1;[侏儒隐形装置],1,1;[地精起搏器XL型],1,1;[灵巧秒表],1,1;[末日颅骨],1,1;[萨弗隆烈酒],20,20;[夜晚之眼],1,0;[夜枭之链],1,0;[厚灵纹布绷带],10,10;[清洁的德拉诺之水],100,100;[地狱火石],5,0;[金布勒宠物食品],5,0;[荆棘幼崽的种子],5,0;[侏儒喷火炮台],5,0;[奥术炸弹],5,0;
+}
+
+{羲和天照;003hs;
+[纯粹死亡合剂],5,5;[卓越巫师之油],2,2;[强化药剂],10,0;[特效暗影能量药剂],10,0;[法力药水注射器],40,20;[毁灭药水],20,20;[迅捷药水],5,0;[黑暗符文],40,20;[骨鱼汤],20,20;[梦魇草],20,20;[保护卷轴 V],10,0;[精神卷轴 V],10,0;[力量卷轴 V],2,0;[敏捷卷轴 V],2,0;[超级神风炸药],20,10;[地精工兵炸药],20,10;[精金手雷],10,0;[高级假人],5,0;[轻便型超级火箭靴],1,1;[侏儒隐形装置],1,1;[地精起搏器XL型],1,1;[灵巧秒表],1,1;[末日颅骨],1,1;[荆棘幼崽的种子],5,0;[侏儒喷火炮台],5,0;[萨弗隆烈酒],20,20;[夜晚之眼],1,0;[夜枭之链],1,0;[厚灵纹布绷带],10,10;[清洁的德拉诺之水],100,100;[地狱火石],5,0;[金布勒宠物食品],5,0;[流失岁月坠饰],1,0;
 }
 
 a
@@ -667,26 +664,158 @@ a
 
 
 
-local e = aura_env
-if not _G[e.id.."Button"] then
-    local region = WeakAuras.GetRegion(e.id)
-    e.btn = CreateFrame("Button", e.id.."Button", region, "SecureActionButtonTemplate")
-    e.btn:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-    e.btn:SetAttribute("type1","macro")
-    e.btn:SetAttribute("type2","macro")
-    e.btn:SetAllPoints(region)
-end 
-local btn = _G[e.id.."Button"]
-btn:SetAttribute("macrotext1","/cast 邪甲术")
-btn:SetAttribute("macrotext2","/cast 魔甲术")
-
-btn:SetScript("OnEnter", function(self)
-        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-        GameTooltip:SetText("|cffffffff左键：|r邪甲术|cff04f192|r\n|cffffffff右键：|r魔甲术|cff04f192|r", 0, 1, 0, 1, 1)
-end)
-btn:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
 
 
+
+纯粹死亡合剂	5
+卓越巫师之油	5
+法力药水注射器 40
+毁灭药水	40
+黑暗符文	40
+自由行动药水	5
+骨鱼汤	20
+梦魇草	20
+超级火箭靴	1
+活力行动药水
+
+混合职业
+sm  cjq am 
+夜晚之眼	1
+夜枭之链	1
+
+
+
+超级神风炸药	20
+地精工兵炸药	20
+精金手雷	10
+高级假人	5
+
+地精起搏器XL型	1
+灵巧秒表	1
+末日颅骨	1
+荆棘种子	5
+侏儒喷火炮台	5
+
+夜晚之眼	1
+夜枭之链	1
+德拉诺之水	100
+
+
+穆鲁测试
+
+下列宏不会 肉搏 因为爪牙肉搏占比很低 很容易死亡 暗影箭雨 射程是 20码 可以实现远程击杀 如果非要肉搏 可以用下面两个宏 手动调整
+
+#showtooltip 暗影箭
+/cast [@mouseover,harm,nodead][]暗影箭
+/cast [@focustarget,harm,nodead,mod:alt][target=穆鲁,mod:shift][]暗影箭雨
+
+前提
+
+假设你的暗影箭 键位是1 焦点是小怪T（fq）
+宝宝 调节成了被动
+
+场景1 
+大胖子出来了 你需要单点 没有黑水 没有小兵 
+
+动作
+按住shift 狂按1 
+
+结果 
+你暗影箭打大胖子 小胖子疯狂殴打穆鲁
+
+场景2
+大胖子出来了 你需要单点 有黑水 有小兵 
+
+动作
+按住alt 狂按1 
+
+结果
+你暗影箭打大胖子 小胖子疯狂殴打防骑的目标
+
+场景3
+大胖子出来了 你需要单点 有黑水 无小兵 
+
+动作
+狂按1 
+
+结果
+你暗影箭打大胖子 小胖子在旁边疯狂殴打大胖子
+
+
+
+
+#showtooltip 腐蚀之种
+/cast [@mouseover,harm,nodead][]腐蚀之种
+/cast [@mouseover,harm,nodead][]暗影箭雨
+
+前提
+假设你的腐蚀之种 键位是1 
+宝宝 调节成了被动
+
+场景1
+大胖子分裂了
+动作
+狂按1 
+结果
+你腐蚀之种打小胖子 小胖子疯狂殴打小胖子
+
+
+ss宝攻
+#showtooltip [pet:虚空行者]折磨;[pet:魅魔]剧痛鞭笞;[pet:地狱猎犬]吞噬魔法;火焰箭
+/targetenemy [help][dead][noexists]
+/petattack [@mouseover,harm] []
+/施放 [pet:虚空行者]折磨
+/施放 [pet:魅魔,@mouseover,harm][]剧痛鞭笞
+/施放 [pet:黑暗爪牙,@mouseover,harm][]暗影箭雨
+
+
+现在tbc宝宝跟随有问题 只能选择点两下 才能保证100% 第一时间回到身边
+ss宝回按两次
+#showtooltip
+/petpassive
+/petfollow
+/petstay
+/petfollow
+/stopmacro [mounted]
+/施放 [nocombat,pet]黑暗契约
+
+
+
+
+#showtooltip 腐蚀之种
+/cast [@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]腐蚀之种
+/cast [@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]暗影箭雨
+
+#showtooltip 暗影箭
+/targetenemy [help][dead][noexists]
+/use [mod:alt] 14
+/use [mod:alt] 13
+/cast 暗影箭
+/cast [@focustarget,harm,nodead,mod:shift][target=穆鲁,mod:ctrl]暗影箭雨
+
+
+
+ss宝攻
+#showtooltip [pet:虚空行者]折磨;[pet:魅魔]剧痛鞭笞;[pet:地狱猎犬]吞噬魔法;火焰箭
+/targetenemy [help][dead][noexists]
+/petattack [@mouseover,harm] []
+/施放 [pet:虚空行者]折磨
+/施放 [pet:魅魔,@mouseover,harm][]剧痛鞭笞
+/施放 [pet:黑暗爪牙,@mouseover,harm][]暗影箭雨
+
+
+#showtooltip 暗影箭
+/targetenemy [help][dead][noexists]
+/use [mod:alt] 14
+/use [mod:alt] 13
+/cast 暗影箭
+/cast [@focustarget,harm,nodead,mod:shift][target=穆鲁,mod:ctrl][]暗影箭雨
+/petattack [@focustarget,harm,nodead,mod:shift][target=穆鲁,mod:ctrl]
+
+
+#showtooltip 腐蚀之种
+/cast [@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]腐蚀之种
+/cast [@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]暗影箭雨
 
 
 

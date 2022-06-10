@@ -1,0 +1,193 @@
+-- Author: Noobs.momo
+
+--倒地时间
+aura_env.encounterLog = {
+    [0] = 4594,  -- Total 1:05:10
+    [601]= 245,  -- High Warlord Naj'entus 0:04:17
+    [602]= 703,  -- Supremus 0:10:13
+    [603] = 1222,  -- Shade of Akama 0:17:34
+    [604] = 1789,  -- Teron Gorefiend 0:25:55
+    [605] = 2446,  -- Gurtogg Bloodboil 0:34:21
+    [606] = 2886,  -- Reliquary of Souls 0:41:43
+    [607] = 3571,  -- Mother Shahraz 0:50:45
+    [608] = 4073,  -- The Illidari Council 0:57:45
+    [609] = 4594   -- Illidan Stormrage 1:05:10
+}
+
+aura_env.encounterIDtoENName = {
+    [0] = "Total", 
+    [601]= "High Warlord Naj'entus", 
+    [602]= "Supremus",
+    [603] = "Shade of Akama",
+    [604] = "Teron Gorefiend",
+    [605] = "Gurtogg Bloodboil",
+    [606] = "Reliquary of Souls",
+    [607] = "Mother Shahraz",
+    [608] = "The Illidari Council",
+    [609] = "Illidan Stormrage"
+}
+
+aura_env.encounterIDtoCNName = {
+    [0] = "总计", 
+    [601]= "高阶督军纳因图斯", 
+    [602]= "苏普雷姆斯",
+    [603] = "阿卡玛之影",
+    [604] = "塔隆·血魔",
+    [605] = "灵魂之匣",
+    [606] = "古尔图格·血沸",
+    [607] = "莎赫拉丝主母",
+    [608] = "伊利达雷议会",
+    [609] = "伊利丹·怒风"
+}
+
+aura_env.StartNPCID = 22884
+aura_env.EndEncounterID = 609
+aura_env.BestLog = {}
+aura_env.CurrentLog = {}
+aura_env.CombatStartTime = nil
+
+-- Sort table order by expiration time
+aura_env.encounterKey = {}
+for encounterID in pairs(aura_env.encounterLog) do
+    table.insert(aura_env.encounterKey, encounterID)
+end
+table.sort(aura_env.encounterKey,function(v1,v2) return aura_env.encounterLog[v1] < aura_env.encounterLog[v2] end)
+
+aura_env.CurrentLog["startTime"] = nil
+for EncounterID in pairs(aura_env.encounterLog) do
+    aura_env.CurrentLog[EncounterID] = nil
+    aura_env.BestLog[EncounterID] = nil
+end
+
+if ItemUseInputSaved then
+    if not ItemUseInputSaved.BestLog then
+        ItemUseInputSaved.BestLog = aura_env.BestLog
+    else
+        aura_env.BestLog = ItemUseInputSaved.BestLog
+    end
+    
+    if not ItemUseInputSaved.CurrentLog then
+        ItemUseInputSaved.CurrentLog = aura_env.CurrentLog
+    else
+        aura_env.CurrentLog = ItemUseInputSaved.CurrentLog
+    end
+    
+end
+
+aura_env.UpdateCurrentLog = function(encounterID, duration)
+    if ItemUseInputSaved then
+        aura_env.BestLog = ItemUseInputSaved.BestLog
+        aura_env.CurrentLog = ItemUseInputSaved.CurrentLog
+    end
+    
+    if not encounterID or not duration then return end
+    
+    aura_env.CurrentLog[encounterID] = duration
+    
+    if encounterID == 0 then --refresh best log
+        if aura_env.CurrentLog[0] > (aura_env.BestLog[0] or aura_env.encounterLog[0]) then
+            for _,EncounterID in pairs(aura_env.encounterKey) do
+                aura_env.BestLog[EncounterID] = aura_env.encounterLog[EncounterID]
+            end
+        else
+            for _,EncounterID in pairs(aura_env.encounterKey) do
+                aura_env.BestLog[EncounterID] = aura_env.CurrentLog[EncounterID]
+            end
+        end
+        
+        if ItemUseInputSaved then
+            ItemUseInputSaved.BestLog= aura_env.BestLog
+            ItemUseInputSaved.CurrentLog = aura_env.CurrentLog
+        end
+    end
+end
+
+aura_env.ResetLog = function(resetALL)
+    wipe(aura_env.CurrentLog)
+    aura_env.CurrentLog = {}
+    aura_env.CurrentLog["startTime"] = nil
+    for EncounterID in pairs(aura_env.encounterLog) do
+        aura_env.CurrentLog[EncounterID] = nil
+    end
+    
+    if ItemUseInputSaved then
+        ItemUseInputSaved.CurrentLog = aura_env.CurrentLog
+    end
+    
+    if resetALL then
+        wipe(aura_env.BestLog)
+        aura_env.BestLog = {}
+        for EncounterID in pairs(aura_env.encounterLog) do
+            aura_env.BestLog[EncounterID] = nil
+        end
+        
+        if ItemUseInputSaved then
+            ItemUseInputSaved.BestLog = aura_env.BestLog
+        end
+    end
+    
+end
+
+aura_env.SecondsToClock = function(seconds)
+    local seconds = tonumber(seconds)
+    local negative=false
+    local hours = ""
+    local mins = ""
+    local secs = ""
+    local output = ""
+    if seconds then
+        negative=false
+        if seconds < 0 then
+            negative=true
+            seconds=-seconds
+        end
+        hours = string.format("%02.f", math.floor(seconds/3600))
+        mins = string.format("%02.f", math.floor(seconds/60 - (hours*60)))
+        secs = string.format("%02.f", math.floor(seconds - hours*3600 - mins *60))
+        
+        if hours=="00" then
+            if mins=="00" then
+                output=secs
+            else
+                output=mins..":"..secs
+            end
+        else
+            output=hours..":"..mins..":"..secs
+        end
+        
+        if negative then
+            output = "-" .. output
+        end
+        
+        return output
+    end
+end
+
+aura_env.GetNextActiveEncounterID = function()
+    -- load save data
+    if ItemUseInputSaved then
+        aura_env.CurrentLog = ItemUseInputSaved.CurrentLog
+    end
+    
+    for _,EncounterID in pairs(aura_env.encounterKey) do
+        if EncounterID > 0 and not aura_env.CurrentLog[EncounterID] then
+            return EncounterID
+        end
+    end
+    return 0
+end
+
+aura_env.GetBestLogByEncounterID = function(EncounterID)
+    if ItemUseInputSaved then
+        aura_env.BestLog = ItemUseInputSaved.BestLog
+        aura_env.CurrentLog = ItemUseInputSaved.CurrentLog
+    end
+    if not aura_env.BestLog[EncounterID] then
+        return aura_env.encounterLog[EncounterID]
+    end
+    return min(aura_env.BestLog[EncounterID], aura_env.encounterLog[EncounterID])
+end
+
+
+
+

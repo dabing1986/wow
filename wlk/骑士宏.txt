@@ -1,0 +1,7 @@
+fq-一键宏
+
+#showtooltip 圣光审判
+/startattack
+/castsequence reset=8/combat 神圣之盾,正义盾击,圣光审判,正义之锤,奉献,正义盾击,神圣之盾,正义之锤,圣光审判,正义盾击,奉献,正义之锤
+
+

@@ -181,17 +181,16 @@ zs-01-冲锋
 /cleartarget[dead][help]
 /cast [stance:2/3]战斗姿态
 /cast 冲锋
-/equipslot [equipped:盾牌] 16 巨龙之击
-/equipslot [equipped:盾牌] 17 守备官的烙印
 /startattack
+
+
+
 
 
 zs-01-狂暴
 #showtooltip 拦截
 /cast [stance:1/2]狂暴姿态
 /cast 拦截
-/equipslot [equipped:盾牌] 16 巨龙之击
-/equipslot [equipped:盾牌] 17 守备官的烙印
 /startattack
 
 zs-01-防御
@@ -208,6 +207,11 @@ zs-01-防御2
 /equipslot [noequipped:盾牌] 16 埃辛诺斯战刃
 /equipslot [noequipped:盾牌] 17 埃辛诺斯壁垒
 /cast 盾牌格挡
+
+zs-换武器
+
+/equipslot [equipped:盾牌] 16 埃辛诺斯战刃
+/equipslot [equipped:盾牌] 17 艾萨拉之爪
 
 
 zs-取消英勇
@@ -229,6 +233,17 @@ zs-嗜血
 /targetenemy [help][dead][noexists]
 /startattack
 /cast 嗜血
+/cast [equipped:盾牌] 盾牌猛击
+
+#showtooltip 
+/cleartarget[dead][help]
+/targetenemy [help][dead][noexists]
+/startattack
+/cast 嗜血
+/cast 盾牌猛击
+/cast 致死打击
+/run local G=GetSpellInfo SetMacroSpell(GetRunningMacro(), G"嗜血" or G"盾牌猛击" or G"致死打击")
+
 
 zs-大招
 #showtooltip
@@ -266,11 +281,12 @@ zs-搓志
 
 zs-斩杀
 #showtooltip
-/cancelaura
+/cancelaura 保护祝福
 /cleartarget[dead][help]
 /cast [mod:alt] 挑战怒吼;[stance:1/3] 斩杀;[stance:2] 嘲讽
 /startattack
-/cast !射击
+/cast [equipped:投掷武器] 投掷; 射击
+/equip [equipped:弓/弩]永恒箭矢; [equipped:枪械] 永恒弹丸
 
 
 zs-断筋
@@ -290,11 +306,11 @@ zs-旋风
 
 zs-横扫
 
-#showtooltip 横扫攻击
+#showtooltip [stance:2]震荡猛击;横扫攻击
 /cleartarget[dead][help]
 /startattack
 /cast 横扫攻击
-
+/cast 震荡猛击
 
 
 zs-泄怒1
@@ -313,8 +329,8 @@ zs-泄怒2
 
 zs-爆发
 /cast 死亡之愿
-/use [mod:alt] 13
-/use [mod:alt] 13
+/use [mod:alt] 14
+/use [nomod] 13
 
 zs-盾墙
 #showtooltip 盾墙
@@ -342,6 +358,15 @@ zs-破甲
 /cleartarget[dead][help]
 /startattack
 /cast 破甲攻击
+
+
+zs-破甲
+#showtooltip
+/cleartarget[dead][help]
+/startattack
+/cast 毁灭打击
+/cast 破甲攻击
+/run local G=GetSpellInfo SetMacroSpell(GetRunningMacro(), G"毁灭打击" or G"破甲攻击")
 
 zs-缴械
 #showtooltip 缴械
@@ -561,9 +586,16 @@ pvp-zs-狂暴姿态
 /startattack
 
 
+/equipslot [button:1]13 小巫毒面具
+/equipslot [button:1]14 队长的徽章
+/use [button:2] 小巫毒面具
+/use [button:2] 队长的徽章
+/equipslot [button:2] 13 龙脊奖章
+/equipslot [button:2] 14 狂暴者的召唤
 
-{肖恩丶狂暴者;01团本-kbz;
-[无情突袭合剂],5,0;[加速药水],20,0;[屠魔药剂],5,0;[强效怒气药水],30,0;[力量卷轴 V],15,0;[敏捷卷轴 V],15,0;[保护卷轴 V],15,0;[烧烤裂蹄牛],20,0;[猫鼬药剂],10,0;[超级神风炸药],30,0;[地精工兵炸药],30,0;[魔铁炸弹],30,0;[治疗药水注射器],10,0;[精金平衡石],10,0;[元素磨刀石],10,0;[强效结界符文],5,0;[梦魇草],10,0;[献祭之油],20,0;[萨弗隆烈酒],10,0;
+
+{战神阿铁;01团本-kbz;
+[无情突袭合剂],5,0;[奥术炸弹],10,0;[次级护盾符文],10,0;[加速药水],30,0;[屠魔药剂],20,0;[强效怒气药水],30,0;[力量卷轴 V],15,0;[敏捷卷轴 V],15,0;[保护卷轴 V],15,0;[烧烤裂蹄牛],20,0;[猫鼬药剂],10,0;[超级神风炸药],30,0;[地精工兵炸药],30,0;[精金手雷],20,0;[精金平衡石],10,0;[元素磨刀石],10,0;[强效结界符文],5,0;[梦魇草],10,0;[献祭之油],20,0;[萨弗隆烈酒],10,0;
 }
 
 {东君;01团本-kbz;

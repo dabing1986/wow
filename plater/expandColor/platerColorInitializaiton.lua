@@ -73,7 +73,7 @@ function (modTable)
         },
         
         {
-            enable      = true,
+            enable      = false,
             name        = "焦点单位",
             
             condition   = {13},
@@ -84,19 +84,19 @@ function (modTable)
             typeshow    = 1,
             typevalue   = "#33a3dc"
         },
-        
-        {
-            enable      = true,
-            name        = "标记单位",
+        -- move this to the later index to avoid overwrite target color --> after target condition 
+        -- {
+        --     enable      = true,
+        --     name        = "标记单位",
             
-            condition   = {14},
-            value       = {
-                {}
-            },
+        --     condition   = {14},
+        --     value       = {
+        --         {}
+        --     },
             
-            typeshow    = 1,
-            typevalue   = ""
-        },
+        --     typeshow    = 1,
+        --     typevalue   = ""
+        -- },
     }
     
     
@@ -180,11 +180,23 @@ function (modTable)
         typevalue = modTable.config._typeValueWithoutBuff
     }
     
-    
+    local markCondition = {
+            enable      = true,
+            name        = "标记单位",
+            
+            condition   = {14},
+            value       = {
+                {}
+            },
+            
+            typeshow    = 1,
+            typevalue   = ""
+    }
     -- 默认的条件组，会依次加在自定义条件组的后面。 可根据需要自行调整这几行的顺序
     table.insert(modTable.Conditions, executeCondition)                 -- 默认斩杀条件
     table.insert(modTable.Conditions, upexecuteCondition)               -- 默认反斩杀条件
     table.insert(modTable.Conditions, targetCondition)                  -- 默认目标条件
+    table.insert(modTable.Conditions, markCondition)                    -- 默认标记条件
     table.insert(modTable.Conditions, specifiedCondition)               -- 默认特定单位条件
     table.insert(modTable.Conditions, withBuffCondition)                -- 默认有Buff条件
     table.insert(modTable.Conditions, withoutBuffCondition)             -- 默认没有Buff条件
@@ -225,7 +237,9 @@ function (modTable)
                 -- print("CheckCondition -- Enter Specified")
                 pass = modTable.CheckSpecifiedCondition(unitFrame, conditionGroup.value[i], conditionGroup)
             elseif v == modTable.ConditionType.Target then
-                --print("CheckCondition -- Enter Target")
+                -- print("CheckCondition -- Enter Target")
+                -- print("First")
+                -- print(conditionGroup.condition[1])
                 pass = modTable.CheckTargetCondition(unitFrame, conditionGroup.value[i], conditionGroup)
             elseif v == modTable.ConditionType.WithBuff then
                 -- print("CheckCondition -- Enter WithBuff")
@@ -258,10 +272,12 @@ function (modTable)
                 pass = modTable.CheckFocusCondition(unitFrame, conditionGroup.value[i], conditionGroup)
             elseif v == modTable.ConditionType.Mark then
                 --print("CheckCondition -- Enter Mark")
+                -- print("Second")
+                -- print(conditionGroup.condition[1])
                 pass = modTable.CheckMarkCondition(unitFrame, conditionGroup.value[i], conditionGroup)
 
                 -- don't want mark chang color
-                pass = false
+                -- pass = false
             else
                 print("Plater Mod -- Extened Color -- Unknown Condition: " .. tostring(v))
                 pass = false
@@ -281,24 +297,37 @@ function (modTable)
     function modTable.ApplyCondition(conditionGroup, unitFrame, envTable)
         if conditionGroup.typeshow == modTable.TypeShow.Color then
             envTable.FullBarFlash:Stop()
-            -- if unitFrame._SelfMarkType ~= nil and (conditionGroup.typevalue == "" or conditionGroup.typevalue == nil) then
-            --     -- local localplaterlcolor = Plater.GetNpcColor (unitFrame)
-            --     -- if localplaterlcolor ~= nil then
-            --     --     Plater.SetNameplateColor(unitFrame, localplaterlcolor)
-            --     -- else
-            --         Plater.SetNameplateColor(unitFrame, modTable.MarkColor[unitFrame._SelfMarkType])
-            --     -- end
-                
-            -- else
-            local localplaterlcolor = Plater.GetNpcColor (unitFrame)
-            if localplaterlcolor ~= nil  and (conditionGroup.typevalue == "" or conditionGroup.typevalue == nil) then
-                Plater.SetNameplateColor(unitFrame, localplaterlcolor)
+            -- print(unitFrame._SelfMarkType)
+            -- print(conditionGroup.typevalue)
+            -- print(conditionGroup.typevalue)
+            if unitFrame._SelfMarkType ~= nil  then
+                -- local localplaterlcolor = Plater.GetNpcColor (unitFrame)
+                -- if localplaterlcolor ~= nil then
+                --     Plater.SetNameplateColor(unitFrame, localplaterlcolor)
+                -- else
+                -- print("here")
+                -- print(conditionGroup.typevalue)
+                local localplaterlcolor = Plater.GetNpcColor (unitFrame)
+                if (conditionGroup.typevalue == "" or conditionGroup.typevalue == nil)  then
+                    -- body
+                    if localplaterlcolor ~= nil then
+                        Plater.SetNameplateColor(unitFrame, localplaterlcolor)
+                    else
+                        Plater.SetNameplateColor(unitFrame, modTable.MarkColor[unitFrame._SelfMarkType])
+                    end   
+                else
+                    -- body
+                    if unitFrame.namePlateIsTarget then
+                        Plater.SetNameplateColor(unitFrame, conditionGroup.typevalue)
+                    end
+                end
+               
+                -- print( unitFrame.namePlateIsTarget)
+            
             else
                 -- print(conditionGroup.typevalue)
                 Plater.SetNameplateColor(unitFrame, conditionGroup.typevalue)
-            end
-                
-            -- end
+            end         
         elseif conditionGroup.typeshow == modTable.TypeShow.Flash then
             Plater.SetNameplateColor(unitFrame, "red")
             envTable.FullBarFlash:Play()

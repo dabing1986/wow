@@ -398,6 +398,16 @@ zs-雷霆
 /cast 雷霆一击
 
 
+#showtooltip 雷霆一击
+/cast [stance:2/3]战斗姿态
+/startattack
+/castsequence 雷霆一击, 狂暴姿态
+
+
+
+
+
+
 拦截贼
 
 /cast [stance:1]冲锋;[stance:2]拦截

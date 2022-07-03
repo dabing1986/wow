@@ -362,7 +362,15 @@ ss暗影
 /targetenemy [help][dead][noexists]
 /use [mod:alt] 14
 /use [mod:alt] 13
-/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][]暗影箭
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]暗影箭
+
+
+
+/targetenemy [help][dead][noexists]
+/cast [@focus,harm,nodead] 雪球
+/use [mod:alt] 14
+/use [mod:alt] 13
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]暗影箭
 
 
 
@@ -511,9 +519,17 @@ ss生命
 
 ss生命2
 
+/cast [@focus,harm,nodead] 雪球
 /cast 生命分流
 /use 魔法冰川水
 /use 清洁的德拉诺之水
+
+
+/targetenemy [help][dead][noexists]
+/cast [@focus,harm,nodead] 雪球
+/use [mod:alt] 14
+/use [mod:alt] 13
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]暗影箭
 
 
 
@@ -529,7 +545,14 @@ GSE
 /cast [flyable] 迅捷红色狮鹫; 乌鸦之神的缰绳
 /dismount [mounted]
 
+wlk
 
+#showtooltip [combat]吸取灵魂;恐惧战马
+/targetenemy [help][dead][noexists]
+/cast [@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat,nochanneling:吸取灵魂] 吸取灵魂
+/stopmacro [flying]
+/cast [flyable] 迅捷红色狮鹫; 恐惧战马
+/dismount [mounted]
 
 
 
@@ -537,88 +560,6 @@ GSE
 /5  节日五连 来T N DPS 来清白cd
 /6  节日五连 来T N DPS 来清白cd
 /7  节日五连 来T N DPS 来清白cd
-
-
-
-毁灭药剂
-水煮蓝鱼
-骨鱼汤
-烈焰菇
-纯粹死亡合剂
-卓越巫师之油
-超级神风炸药
-地精工兵炸药
-法力药水注射器
-黑暗符文
-厚灵纹布绷带
-迅捷药水
-清洁的德拉诺之水
-
-超级活力药水
-灵纹投网
-水上行走药剂
-地精暗雷
-
-
-
-{羲和天照;00p3;
-[毁灭药水],20,20;[水煮蓝鱼],20,20;[骨鱼汤],20,20;[纯粹死亡合剂],5,5;[卓越巫师之油],2,2;[法力药水注射器],30,30;[黑暗符文],20,20;[厚灵纹布绷带],20,20;
-}
-
-
-{羲和天照;001speed;
-[纯粹死亡合剂],5,5;[卓越巫师之油],2,2;[强化药剂],10,0;[特效暗影能量药剂],10,0;[法力药水注射器],40,20;[毁灭药水],20,20;[迅捷药水],5,0;[黑暗符文],40,20;[自由行动药剂],5,0;[骨鱼汤],20,20;[梦魇草],20,20;[保护卷轴 V],10,0;[精神卷轴 V],10,0;[力量卷轴 V],2,0;[敏捷卷轴 V],2,0;[超级神风炸药],20,10;[地精工兵炸药],20,10;[精金手雷],10,0;[高级假人],5,0;[轻便型超级火箭靴],1,1;[侏儒隐形装置],1,1;[地精起搏器XL型],1,1;[灵巧秒表],1,1;[末日颅骨],1,1;[荆棘幼崽的种子],5,0;[侏儒喷火炮台],5,0;[萨弗隆烈酒],20,20;[夜晚之眼],1,0;[夜枭之链],1,0;[厚灵纹布绷带],10,10;[清洁的德拉诺之水],100,100;[地狱火石],5,5;[金布勒宠物食品],5,5;
-}
-
-
-{羲和天照;002BT;
-[纯粹死亡合剂],5,5;[卓越巫师之油],2,2;[强化药剂],10,0;[特效暗影能量药剂],10,0;[法力药水注射器],40,20;[毁灭药水],10,10;[黑暗符文],30,10;[自由行动药剂],5,0;[骨鱼汤],20,20;[梦魇草],20,20;[保护卷轴 V],10,0;[精神卷轴 V],10,0;[力量卷轴 V],2,0;[敏捷卷轴 V],2,0;[超级神风炸药],20,10;[地精工兵炸药],20,10;[精金手雷],10,0;[高级假人],5,0;[轻便型超级火箭靴],1,1;[侏儒隐形装置],1,1;[地精起搏器XL型],1,1;[灵巧秒表],1,1;[末日颅骨],1,1;[萨弗隆烈酒],20,20;[夜晚之眼],1,0;[夜枭之链],1,0;[厚灵纹布绷带],10,10;[清洁的德拉诺之水],100,100;[地狱火石],5,0;[金布勒宠物食品],5,0;[荆棘幼崽的种子],5,0;[侏儒喷火炮台],5,0;[奥术炸弹],5,0;
-}
-
-{羲和天照;003hs;
-[纯粹死亡合剂],5,5;[卓越巫师之油],2,2;[强化药剂],10,0;[特效暗影能量药剂],10,0;[法力药水注射器],40,20;[毁灭药水],20,20;[迅捷药水],5,0;[黑暗符文],40,20;[骨鱼汤],20,20;[梦魇草],20,20;[保护卷轴 V],10,0;[精神卷轴 V],10,0;[力量卷轴 V],2,0;[敏捷卷轴 V],2,0;[超级神风炸药],20,10;[地精工兵炸药],20,10;[精金手雷],10,0;[高级假人],5,0;[轻便型超级火箭靴],1,1;[侏儒隐形装置],1,1;[地精起搏器XL型],1,1;[灵巧秒表],1,1;[末日颅骨],1,1;[荆棘幼崽的种子],5,0;[侏儒喷火炮台],5,0;[萨弗隆烈酒],20,20;[夜晚之眼],1,0;[夜枭之链],1,0;[厚灵纹布绷带],10,10;[清洁的德拉诺之水],100,100;[地狱火石],5,0;[金布勒宠物食品],5,0;[流失岁月坠饰],1,0;
-}
-
-a
-纯粹死亡合剂	5
-卓越巫师之油	5
-强化药剂	10
-特效暗影能量	10
-法力药水注射器 40
-毁灭药水	40
-黑暗符文	40
-自由行动药水	5
-骨鱼汤	20
-梦魇草	20
-保护卷轴	10
-精神卷轴	10
-力量卷轴	2
-敏捷卷轴	2
-超级神风炸药	20
-地精工兵炸药	20
-精金手雷	10
-高级假人	5
-超级火箭靴	1
-地精起搏器XL型	1
-灵巧秒表	1
-末日颅骨	1
-荆棘种子	5
-侏儒喷火炮台	5
-萨弗隆烈酒	20
-夜晚之眼	1
-夜枭之链	1
-德拉诺之水	100
-
-
-
-
-
-梦魇草
-魔尘
-荆棘幼崽的种子
-献祭之油
-特效魔法抗性药水
-地精暗雷
 
 
 {佐伯大铁子;00p3;
@@ -769,6 +710,16 @@ ss宝攻
 /施放 [pet:黑暗爪牙,@mouseover,harm][]暗影箭雨
 
 
+
+ss宝攻
+#showtooltip [pet:虚空行者]折磨;[pet:魅魔]剧痛鞭笞;[pet:地狱猎犬]吞噬魔法;火焰箭
+/targetenemy [help][dead][noexists]
+/petattack [@mouseover,harm] []
+/施放 [pet:虚空行者]折磨
+/施放 [pet:魅魔,@mouseover,harm][]剧痛鞭笞
+/施放 [pet:haapdhun,@mouseover,harm][]暗影撕咬
+
+
 现在tbc宝宝跟随有问题 只能选择点两下 才能保证100% 第一时间回到身边
 ss宝回按两次
 #showtooltip
@@ -818,4 +769,48 @@ ss宝攻
 /cast [@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]暗影箭雨
 
 
+/run SetCVar("nameplateOverLapH"，"2.2")
+/run SetCVar("nameplateOverLapV"，"2.5")
+
+
+/cast 蓝龙之盾
+
+/cast 闪现术
+
+/cast 龙息：急速
+
+/cast 龙息：恢复
+
+
+/castsequence 闪现术, 龙息：急速
+
+/castsequence 闪现术, 龙息：恢复
+
+
+
+/console ffxDeath 0
+/console ffxGlow 0
+/console weatherdensity 0
+/console SET profanityFilter "0"
+/console SET overrideArchive "0"
+/console rawMouseEnable 1
+
+
+
+
+
+function(trigger)
+    local f = WeakAuras["regions"][aura_env.id]["region"]
+    if trigger[1] or trigger[2] then
+        if trigger[3] then
+            f.activeAura = true 
+        else
+            f.activeAura = false
+        end
+        
+    else
+        f.activeAura = false
+    end
+    return f.activeAura
+end
 

@@ -15,7 +15,7 @@ def press_button(button_name, time_of_button_press):
     pyautogui.keyUp(button_name)
 
 
-time.sleep(10)
+time.sleep(3)
 
 window = win32gui.FindWindow(None,"魔兽世界") 
 win32gui.SetForegroundWindow(window)
@@ -34,16 +34,21 @@ while True:
 	# press_button("a",0.2)
 	# press_button("s",0.5)
 	# press_button("d",0.2)
-	press_button("space",0.5)
-	press_button("1",0.5)
+	# press_button("space",0.5)
+	# press_button("1",0.5)
+	# time.sleep(1)
+	press_button("r",0.5)
+	# press_button("2",0.5)
+	# time.sleep(1)
+	# press_button("e",0.5)
 	# time.sleep(random.randint(1,3))
 	# pyautogui.keyDown('alt') 
 	# time.sleep(.2)
 	# pyautogui.press('tab')
 	# time.sleep(.2)
 	# pyautogui.keyUp('alt')
-
-	time.sleep(random.randint(5,8))
+	time.sleep(2)
+	# time.sleep(random.randint(5,8))
 
 
 # while True:

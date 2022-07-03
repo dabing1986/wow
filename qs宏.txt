@@ -1,0 +1,88 @@
+#showtooltip 愤怒之锤
+/cast [@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat,harm,nodead] 愤怒之锤
+/stopmacro [flying]
+/cast [flyable] 迅捷红色狮鹫; 迅捷白马
+/dismount [mounted]
+
+qs-保护
+#showtooltip
+/stopcasting
+/cast [target=player,mod:ctrl] [target=mouseover,help][target=target,help,exists]保护祝福
+/P 我已释放保护祝福持续10s，注意不免疫魔法哦！
+/RA 我已释放保护祝福持续10s，注意不免疫魔法哦！
+
+qs-换武器
+
+王子换武器
+/equipslot [button:1] 16 宇宙灌注者
+/equipslot [button:1] 17 相位壁垒
+/equipslot [button:2]16 海兽之牙
+/equipslot [button:2]17 奥尔多遗产保卫者
+
+
+qs-圣疗
+#showtooltip 圣疗术
+/stopcasting
+/cast [target=player,mod:ctrl][@focustarget,help,nodead,mod:shift][@focus,help,nodead,mod:shift][target=mouseover,help][target=target,help,exists] 圣疗术
+
+
+
+qs-圣盾
+#showtooltip
+/stopcasting
+/cast 圣盾术
+
+
+qs-假人
+
+#showtooltip
+/cleartarget
+/stopcasting
+/use 活动假人
+/target [nodead] 活动假人
+/use [help] 保护祝福(等级 1)
+/targetlasttarget
+
+qs-嘲讽
+
+#showtooltip
+/cast [@mouseover,exists]正义防御; 正义防御
+/cast 召唤军马
+
+
+qs-圣光
+
+#showtooltip 圣光闪现
+/use [mod:alt] 14
+/use [mod:alt] 13
+/cast [target=player,mod:ctrl][@targettarget,help,nodead][@focustarget,help,nodead,mod:shift][@focus,help,nodead,mod:shift][@mouseover,help,nodead][] 圣光闪现
+
+E
+qs-审判
+
+#showtooltip 审判
+/use [mod:alt] 14
+/use [mod:alt] 13
+/cast [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][] 审判
+/startattack
+
+qs-奉献
+#showtooltip
+/cast [modifier:shift]奉献(等级 1);奉献
+/startattack
+
+滚轮上
+
+qs-清洁术
+
+#showtooltip 清洁术
+/stopcasting
+/cast [target=mouseover,help][target=target,help,exists][target=player]清洁术
+
+qs-爆发
+
+#showtooltip 复仇之怒
+/cast 复仇之怒
+/use 毁灭药水
+/use 13
+/use 14

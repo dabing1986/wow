@@ -86,3 +86,80 @@ qs-爆发
 /use 毁灭药水
 /use 13
 /use 14
+
+
+fq-一键宏
+
+#showtooltip 圣光审判
+/startattack
+/castsequence reset=8/combat 神圣之盾,正义盾击,圣光审判,正义之锤,奉献,正义盾击,神圣之盾,正义之锤,圣光审判,正义盾击,奉献,正义之锤
+
+
+
+
+/cast [@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat,harm,nodead] 愤怒之锤
+/stopmacro [flying]
+/cast [flyable] 茶色驭风者; 召唤军马
+/dismount [mounted]
+
+
+#showtooltip 保护之手(等级 3)
+/cast [target=mouseover,nomodifier,exists] 保护之手(等级 3)
+
+
+#showtooltip 圣光术
+/cast [target=mouseover,nomodifier,exists] 圣光术
+
+
+#showtooltip 圣疗术(等级 5)
+/cast [target=mouseover,nomodifier,exists] 圣疗术(等级 5)
+
+
+#showtooltip 拯救之手 
+/cast [target=mouseover,nomodifier,exists] 拯救之手
+
+
+/施放 救赎(等级 7)
+/RA 正在复活 <%T>
+
+
+#showtooltip 圣光道标
+/cast [target=mouseover,nomodifier,exists] 圣光道标
+
+
+#showtooltip
+/cast [target=mouseover,help,nodead]清洁术;清洁术
+/script UIErrorsFrame:Clear()
+
+
+#showtooltip 神圣牺牲
+/cast 神圣牺牲
+/cancelaura 神圣牺牲
+/Y 团队大牺牲开启
+
+
+#showtooltip 牺牲之手
+/cast [target=mouseover,nomodifier,exists] 牺牲之手
+
+
+
+#showtooltip 圣洁护盾
+/cast [target=mouseover,nomodifier,exists] 圣洁护盾
+
+
+#showtooltip 自由之手
+/cast [target=mouseover,nomodifier,exists] 自由之手
+
+
+
+#showtooltip 圣光闪现
+/cast [target=mouseover,nomodifier,exists] 圣光闪现
+
+
+#showtooltip 神圣震击
+/cast [target=mouseover,nomodifier,exists] 神圣震击
+
+
+#showtooltip 智慧审判
+/cast [stance:1/3][@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat,harm,nodead] 智慧审判
+

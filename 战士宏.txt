@@ -245,6 +245,18 @@ zs-嗜血
 /run local G=GetSpellInfo SetMacroSpell(GetRunningMacro(), G"嗜血" or G"盾牌猛击" or G"致死打击")
 
 
+
+#showtooltip 
+/cleartarget[dead][help]
+/targetenemy [help][dead][noexists]
+/startattack
+/cast 嗜血
+/cast 致死打击
+/run local G=GetSpellInfo SetMacroSpell(GetRunningMacro(), G"嗜血" or G"致死打击")
+
+
+
+
 zs-大招
 #showtooltip
 /cast [stance:1]反击风暴;/cast [stance:2]盾墙;/cast [stance:3]鲁莽
@@ -259,6 +271,14 @@ zs-怒吼
 #showtooltip [mod:shift]命令怒吼; 战斗怒吼
 /cast [mod:shift]命令怒吼
 /cast 战斗怒吼
+
+zs-怒吼
+#showtooltip [mod:shift]战斗怒吼; 命令怒吼
+/cast [mod:shift]战斗怒吼
+/cast 命令怒吼
+
+
+
 
 zs-惩戒
 #showtooltip 惩戒痛击
@@ -625,3 +645,21 @@ Some units has special events without a clear way to show. This script adds a se
 Place a marker into the health bar to indicate when the unit will change phase or cast an important spell.
 Highlight a nameplate of an important Add. Add the unit name or NpcID into the trigger box to add more.
 Highlight a nameplate of an important Add. Add the unit name or NpcID into the trigger box to add more.
+
+
+#showtooltip [stance:1/3]乘胜追击;[stance:2]援护
+/cast [stance:1/3][@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat,harm,nodead] 乘胜追击
+/cast [stance:2][@focus,harm,nodead][@mouseover,help,nodead][help] 援护
+/stopmacro [flying]
+/cast [flyable] 涡轮加速飞行器控制台; 阿曼尼战熊
+/dismount [mounted]
+
+
+wlk
+
+#showtooltip [stance:1/3]乘胜追击;[stance:2]援护
+/cast [stance:1/3][@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat,harm,nodead] 乘胜追击
+/cast [stance:1/3][@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat,harm,nodead] 英勇投掷
+/stopmacro [flying]
+/cast [flyable] 蓝色驭风者; 迅捷森林狼
+/dismount [mounted]

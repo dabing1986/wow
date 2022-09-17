@@ -1,0 +1,13 @@
+/run SetCVar("nameplateMotionSpeed", 0.05)
+nameplateOverlapH
+
+/dump GetCVar("nameplateMaxDistance")
+/run SetCVar("nameplateOverlapV", 2.2)
+
+
+
+/run SetCVar("nameplateMaxDistance", 30)
+
+
+
+/run C_Console.GetAllCommands()

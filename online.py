@@ -2,7 +2,7 @@ import pyautogui,win32gui,time,random
 
 window = win32gui.FindWindow(None,"魔兽世界")
 win32gui.SetForegroundWindow(window)
-
+pyautogui.FAILSAF = False
 # def hold_W (hold_time):
 #     import time, pyautogui
 #     start = time.time()
@@ -32,12 +32,12 @@ while True:
 	press_button("d",0.5)
 	press_button("space",0.5)
 	press_button("1",0.5)
-	time.sleep(random.randint(1,3))
-	pyautogui.keyDown('alt')
-	time.sleep(.2)
-	pyautogui.press('tab')
-	time.sleep(.2)
-	pyautogui.keyUp('alt')
+	# time.sleep(random.randint(1,3))
+	# pyautogui.keyDown('alt')
+	# time.sleep(.2)
+	# pyautogui.press('tab')
+	# time.sleep(.2)
+	# pyautogui.keyUp('alt')
 
 	time.sleep(random.randint(5,8))
 

@@ -1,0 +1,23 @@
+痛苦诅咒
+
+
+boss  
+if 目标没有痛苦诅咒 and 团队有小德or dk and > 24s then
+    return true
+true
+if boss 倒地时间大于24s 
+
+小怪
+
+if 目标没有痛苦诅咒 and 团队有小德or dk  then
+    return true
+true
+if boss 倒
+
+
+
+if 团队有小德或者DK then
+ return false
+end
+
+UNIT_AURA:player GROUP_ROSTER_UPDATE PLAYER_ENTERING_WORLD UNIT_INVENTORY_CHANGED:player MY_ICON_UPDATE GROUP_LEFT GROUP_JOINED MINIMAP_UPDATE_ZOOM PLAYER_REGEN_DISABLED VENCON_PERSONAL_EVENT CHAT_MSG_RAID CHAT_MSG_RAID_LEADER

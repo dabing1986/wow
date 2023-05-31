@@ -1,3 +1,69 @@
+
+
+/cast [@focus,help,nodead][@mouseover,help][@targettarget, help][@target,help]援护
+
+
+/施放 [@mouseover,help,nodead]援护[@focus,help,nodead]援护;援护
+
+食人魔
+.morph 14406 
+
+
+#showtooltip
+/cleartarget[dead][help]
+/startattack
+/cast 毁灭打击
+/cast [@mouseover,exists,harm,nodead][] 破甲攻击
+/run local G=GetSpellInfo SetMacroSpell(GetRunningMacro(), G"毁灭打击" or G"破甲攻击")
+
+
+
+#showtooltip
+/cleartarget[dead][help]
+/startattack
+/cast 毁灭打击
+/cast 破甲攻击
+/run local G=GetSpellInfo SetMacroSpell(GetRunningMacro(), G"毁灭打击" or G"破甲攻击")
+
+
+#showtooltip [spec:1]死亡之愿;破釜沉舟
+/castsequence  [spec:1] reset=combat 死亡之愿, 鲁莽
+/use [spec:2] 破釜沉舟
+/use [spec:2] 狂怒回复
+/cast [combat]血性狂怒(种族特长)
+/use [combat]10
+/use [combat]13
+/use [combat]14
+
+
+
+#showtooltip [spec:1]死亡之愿;破釜沉舟
+/cast [spec:1] 死亡之愿
+/use [spec:2] 破釜沉舟
+/use [spec:2] 狂怒回复
+/cast [combat]血性狂怒(种族特长)
+/cast [combat]狂暴(种族特长)
+/use [combat]10
+/use [combat]13
+/use [combat]14
+
+
+
+
+
+#showtooltip
+/targetenemy [help][dead][noexists]
+/use [@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat]乘胜追击
+/stopmacro [flying]
+/use [noflyable]迅捷棕狼
+/use [flyable]茶色驭风者
+/use 迅捷棕狼
+/dismount [mounted]
+
+
+[迅捷棕狼][茶色驭风者]
+
+
 3sm
 
 /follow 菠萝神棍
@@ -183,6 +249,12 @@ zs-01-冲锋
 /cast 冲锋
 /startattack
 
+#showtooltip [combat]碎裂投掷; 冲锋
+/cleartarget[dead][help]
+/cast [stance:2/3]战斗姿态
+/startattack
+/cast 冲锋
+/cast [combat] 碎裂投掷
 
 
 
@@ -220,6 +292,22 @@ zs-取消英勇
 /startattack
 /cast 英勇打击
 /stopcasting
+
+
+#showtooltips  撕裂
+/cast [stance:1]撕裂
+/cast [stance:2]撕裂
+/cast [stance:1]狂暴姿态
+/startattack
+
+
+
+#showtooltip 英勇打击
+/cleartarget[dead][help]
+/startattack
+/cast 英勇打击
+/stopcasting
+
 
 zs-取顺
 #showtooltip 顺劈斩
@@ -331,6 +419,15 @@ zs-横扫
 /startattack
 /cast 横扫攻击
 /cast 震荡猛击
+
+
+#showtooltips  碎裂投掷
+/use [combat]10
+/cast [stance:1]碎裂投掷
+/cast [stance:3]战斗姿态
+/startattack
+
+
 
 
 zs-泄怒1
@@ -661,5 +758,48 @@ wlk
 /cast [stance:1/3][@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat,harm,nodead] 乘胜追击
 /cast [stance:1/3][@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat,harm,nodead] 英勇投掷
 /stopmacro [flying]
-/cast [flyable] 蓝色驭风者; 迅捷森林狼
+/cast [noflyable] 阿曼尼战熊
+/cast [flyable] 涡轮加速飞行器控制台
+/cast 阿曼尼战熊
 /dismount [mounted]
+
+/use [@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat]英勇投掷
+#showtooltip
+/targetenemy [help][dead][noexists]
+/use [@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat]乘胜追击
+/stopmacro [flying]
+/use [noflyable]迅捷棕狼
+/use [flyable]茶色驭风者
+/use 迅捷棕狼
+/dismount [mounted]
+
+
+
+
+惩戒痛击
+
+#showtooltips  惩戒痛击
+/use [combat]10
+/cast [stance:1]惩戒痛击
+/cast [stance:2]惩戒痛击
+/cast [stance:3]防御姿态
+/startattack
+
+
+#showtooltip 
+/cleartarget[dead][help]
+/targetenemy [help][dead][noexists]
+/startattack
+/cast [spec:1] 嗜血
+/cast [spec:2] 盾牌猛击
+
+
+#showtooltip
+/cleartarget[dead][help]
+/startattack
+/cast [stance:1]压制
+/cast [stance:2]复仇
+/cast [spec:2] 震荡波
+/cast [stance:3]旋风斩
+
+

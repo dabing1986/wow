@@ -1,0 +1,318 @@
+
+dv狂热
+/cast [@vuhdo]邪恶狂热
+
+
+
+凋零
+#showtooltip
+/targetenemy [help][dead][noexists]
+/use [@targettarget,harm,nodead][@mouseover,harm,nodead][]凋零缠绕
+/use [mod:ctrl,@pet]凋零缠绕
+/use [mod:alt,@player]凋零缠绕
+
+
+#showtooltip
+/startattack
+/castsequence reset=6/target/combat 冰冷触摸,暗影打击,心脏打击,灵界打击,心脏打击,灵界打击,心脏打击,心脏打击,心脏打击,心脏打击
+/use 符文打击
+/use !符文打击
+/mtce
+
+#showtooltip
+/startattack
+/castsequence reset=6/target/combat 冰冷触摸,暗影打击,鲜血打击,灵界打击,鲜血打击,灵界打击,鲜血打击,鲜血打击,鲜血打击,鲜血打击
+/cast 符文打击
+/script UIErrorsFrame:Clear()
+
+#showtooltip
+/startattack
+/castsequence reset=6/target/combat 枯萎凋零,冰冷触摸,暗影打击,传染,血液沸腾,灵界打击,灵界打击,血液沸腾,传染,血液沸腾,血液沸腾,血液沸腾,灵界打击
+
+
+
+/cancelaura 活力分流
+
+#showtooltip 吸血鬼之血
+/cast 活力分流
+/cast 吸血鬼之血
+
+
+#showtooltips 亡者复生
+/castsequence reset=240 亡者复生,天灾契约
+
+
+#showtooltip
+/use 符文分流
+/use 活力分流
+
+
+冰dk
+
+
+d凌风
+
+#showtooltip
+/use 凛风冲击
+/use !符文打击
+/startattack
+/petattack [combat]
+/petfollow [nocombat]
+
+d冰霜
+
+#showtooltip
+/use 冰霜打击
+/use !符文打击
+/startattack
+/petattack [combat]
+/petfollow [nocombat]
+
+
+
+#showtooltip
+/use 湮没
+/use !符文打击
+/startattack
+/petattack [combat]
+/petfollow [nocombat]
+
+
+
+clinique 
+鼠标左键+ctrl 设置焦点 
+
+/target mouseover
+/focus
+
+
+/clearfocus
+
+
+
+
+#showtooltip
+/targetenemy [help][dead][noexists]
+/use [@mouseover,combat,harm,nodead][@targettarget,combat,harm,nodead][combat]死亡之握
+/stopmacro [flying]
+/use [noflyable]阿彻鲁斯死亡战马
+/use [flyable]铁锈始祖幼龙
+/use 阿彻鲁斯死亡战马
+/dismount [mounted]
+
+
+#showtooltip [combat]反魔法护罩;铁锈始祖幼龙
+/targetenemy [help][dead][noexists]
+/stopmacro [channeling:亡者大军]
+/cast [nopet] 亡者复生
+/cast [combat] 反魔法护罩
+/cancelaura [combat] 反魔法护罩
+/use [@mouseover,combat,harm,nodead][stance:2]死亡之握
+/use [@mouseover,combat,harm,nodead][mod:alt]死亡之握
+/stopmacro [flying]
+/use [noflyable]阿彻鲁斯死亡战马
+/use [flyable]铁锈始祖幼龙
+/use 阿彻鲁斯死亡战马
+/dismount [mounted]
+
+#showtooltip
+/targetenemy [help][dead][noexists]
+/use [@targettarget,harm,nodead][@focustarget,harm,nodead,mod:shift][@focus,harm,nodead,mod:shift][@mouseover,harm,nodead][]黑暗命令
+
+
+打断
+
+#showtooltip [mod]绞袭;心灵冰冻
+/stopcasting
+/clearfocus [@focus,dead]
+/Cast [mod:shift,@focus,exists]绞袭
+/cast [mod:shift]绞袭
+/cast [@focus,harm][]心灵冰冻
+
+
+#showtooltip
+/use 冰冷触摸
+/use !符文打击
+/startattack
+/petattack [combat]
+/use [@pettarget,harm,nodead,combat][combat]爪击
+/petfollow [nocombat]
+
+
+
+#showtooltip
+/use 暗影打击
+/use !符文打击
+/startattack
+/petattack [combat]
+/use [@pettarget,harm,nodead,combat][combat]爪击
+/petfollow [nocombat]
+
+
+#showtooltip
+/use 鲜血打击
+/use !符文打击
+/startattack
+/petattack [combat]
+/use [@pettarget,harm,nodead,combat][combat]爪击
+/petfollow [nocombat]
+
+
+#showtooltip
+/use 血液沸腾
+/use !符文打击
+/startattack
+/petattack [combat]
+/use [@pettarget,harm,nodead,combat][combat]爪击
+/petfollow [nocombat]
+
+
+传染 
+
+#showtooltip
+/use 传染
+/use !符文打击
+/startattack
+/petattack [combat]
+/use [@pettarget,harm,nodead,combat][combat]爪击
+/petfollow [nocombat]
+/use 通用热力工程炸药
+/use [@player] 萨隆邪铁炸弹
+
+
+
+
+/cast 铜墙铁壁
+/cast 活力分流
+/cast 湮没
+
+
+
+#showtooltip
+/petpassive
+/petfollow
+/petstay
+/petfollow
+/stopmacro [mounted]
+/施放 [nocombat,pet]蜷缩
+
+互换宏
+
+/script ClearCursor(); local Trinket0, Trinket1 = GetInventorySlotInfo("Trinket0Slot"), GetInventorySlotInfo("Trinket1Slot"); PickupInventoryItem(Trinket0); if CursorHasItem() then EquipCursorItem(Trinket1); end
+
+
+缝/程
+
+#show
+/cast [mod:alt,button:2] 烹饪;[mod:alt] 急救;[button:2] 裁缝;工程学
+
+
+/run UIErrorsFrame:Hide()
+
+1、【起手宏单体版】
+（如果你带的是陨星或者彗星，那么触发了彗星后立刻插入技能【召唤石像鬼】，再继按续此宏）
+#showtooltip
+/stopmacro [channeling:亡者大军]
+/castsequence [@cursor] reset=600/combat 食尸鬼狂乱,冰冷触摸,暗影打击,鲜血打击,活力分流,枯萎凋零,符文武器增效,冰冷触摸,暗影打击,血液沸腾,x
+/startattack
+/cast 爪击
+/petattack
+/use 通用热力工程炸药
+/use [@CURSOR]萨隆邪铁炸弹
+
+2、【起手宏AOE版】
+#showtooltip
+/stopmacro [channeling:亡者大军]
+/castsequence [@cursor] reset=600/combat 冰冷触摸,暗影打击,鲜血打击,枯萎凋零,活力分流,传染,符文武器增效,冰冷触摸,暗影打击,血液沸腾,x
+/startattack
+/cast 爪击
+/petattack
+/use 通用热力工程炸药
+/use [@CURSOR]萨隆邪铁炸弹
+
+
+3、【一键单体循环-绿脸】宏
+#showtooltip
+/stopmacro [channeling:亡者大军]
+/cast [nopet] 亡者复生
+/castsequence [@cursor] reset=6/combat 冰冷触摸,暗影打击,鲜血打击,枯萎凋零,冰冷触摸,食尸鬼狂乱,血液沸腾,冰冷触摸,暗影打击,血液沸腾,冰冷触摸,暗影打击,鲜血打击,枯萎凋零,冰冷触摸,暗影打击,血液沸腾
+/startattack
+/cast 爪击
+/petattack
+/use 通用热力工程炸药
+/use [@CURSOR]萨隆邪铁炸弹
+
+4、【一键群体循环-绿脸】宏
+#showtooltip
+/stopmacro [channeling:亡者大军]
+/cast [nopet] 亡者复生
+/castsequence [@cursor] reset=6/combat 冰冷触摸,暗影打击,鲜血打击,枯萎凋零,冰冷触摸,食尸鬼狂乱,传染,冰冷触摸,暗影打击,血液沸腾,冰冷触摸,暗影打击,鲜血打击,枯萎凋零,冰冷触摸,暗影打击,传染
+/startattack
+/cast 爪击
+/petattack
+/use 通用热力工程炸药
+/use [@CURSOR]萨隆邪铁炸弹
+
+5、【召唤石像鬼】宏
+
+#showtooltip 召唤石像鬼
+/stopmacro [channeling:亡者大军]
+/use 狂暴
+/use 血性狂暴
+/use 10
+/use 13
+/use 14
+/cast 召唤石像鬼
+
+6、【亡者大军】宏
+
+#showtooltip 亡者大军
+/stopmacro [channeling:亡者大军]
+/use 狂暴
+/use 血性狂暴
+/use 10
+/use 13
+/use 14
+/use 速度药水
+/cast 亡者大军
+
+7、【一键单体循环-红脸版】宏
+#showtooltip
+/stopmacro [channeling:亡者大军]
+/cast [nopet] 亡者复生
+/castsequence [@cursor] reset=6/combat 冰冷触摸,暗影打击,鲜血打击,枯萎凋零,冰冷触摸,食尸鬼狂乱,血液沸腾,冰冷触摸,暗影打击,血液沸腾,枯萎凋零,冰冷触摸,暗影打击,鲜血打击
+/startattack
+/cast 爪击
+/petattack
+/use 通用热力工程炸药
+/use [@CURSOR]萨隆邪铁炸弹
+
+8、【一键群体循环-红脸版】宏
+#showtooltip
+/stopmacro [channeling:亡者大军]
+/cast [nopet] 亡者复生
+/castsequence [@cursor] reset=6/combat 冰冷触摸,暗影打击,鲜血打击,枯萎凋零,冰冷触摸,食尸鬼狂乱,血液沸腾,冰冷触摸,暗影打击,传染,枯萎凋零,冰冷触摸,暗影打击,鲜血打击
+/startattack
+/cast 爪击
+/petattack
+/use 通用热力工程炸药
+/use [@CURSOR]萨隆邪铁炸弹
+
+
+9、【符文武器增效宏-使用时如果是红脸，按到图标显示为❓；如果是绿脸，按一下就可以开大军了】
+#showtooltip
+/stopmacro [channeling:亡者大军]
+/cast [nopet] 亡者复生
+/castsequence [@cursor] reset=6/combat 符文武器增效,邪恶灵气,冰冷触摸,血液沸腾,x
+/startattack
+/cast 爪击
+/petattack
+/use 通用热力工程炸药
+/use [@CURSOR]萨隆邪铁炸弹
+
+10、【奥尔加隆不准 aoe专用】
+#showtooltip
+/stopmacro [channeling:亡者大军]
+/castsequence [@cursor] reset=6/combat 冰冷触摸,暗影打击,鲜血打击,冰冷触摸,食尸鬼狂乱,鲜血打击,冰冷触摸,暗影打击,鲜血打击,冰冷触摸,暗影打击,鲜血打击,冰冷触摸,暗影打击,鲜血打击
+/startattack
+/cast 爪击

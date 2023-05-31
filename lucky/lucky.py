@@ -215,7 +215,7 @@ win32gui.SetForegroundWindow(window)
 time.sleep(2)
 # press_button("s",10)
 while True:
-    t_img = get_img()
+    t_i mg = get_img()
     if imgcheck(t_img,'out.png')[0] >= 30:
         print("touch this")
         time.sleep(1)
